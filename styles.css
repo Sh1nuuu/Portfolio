@@ -1,4 +1,16 @@
-/* Style de base */
+/* Variables CSS pour une gestion plus facile */
+:root {
+    --primary-color: #ff6600; /* Orange */
+    --secondary-color: #f8a500; /* Orange clair */
+    --background-color: #1a1a1a;
+    --text-color: #fff;
+    --footer-bg: #222;
+    --header-bg: rgba(0, 0, 0, 0.7);
+    --font-family: 'Arial', sans-serif;
+    --box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+}
+
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -8,43 +20,33 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Assure que le body prend toute la hauteur de la fenêtre */
-    font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a; /* Gris foncé */
-    color: #fff;
+    min-height: 100vh;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow: hidden; /* Pour éviter les scrolls intempestifs */
 }
 
-/* Effets de fond et animation */
-.animated-background {
-    background: linear-gradient(45deg, #ff6600, #f8a500);
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    animation: animateBackground 15s infinite linear;
-}
-
-/* Header */
+/* En-tête */
 header {
     text-align: center;
-    background: rgba(0, 0, 0, 0.7);
+    background: var(--header-bg);
     padding: 60px 20px;
     border-radius: 15px;
     margin-top: 50px;
-    box-shadow: 1 4px 20px rgba(255, 102, 0, 0.3); /* Ombre orange */
+    box-shadow: 1 4px 20px rgba(255, 102, 0, 0.3);
 }
 
 h1 {
     font-size: 3.5rem;
-    color: #ff6600; /* Orange */
+    color: var(--primary-color);
     letter-spacing: 3px;
     margin-bottom: 10px;
 }
 
 #subText {
     font-size: 1.8rem;
-    color: #f8a500; /* Orange clair */
+    color: var(--secondary-color);
     font-weight: 300;
     margin-top: 10px;
     font-style: italic;
@@ -54,33 +56,33 @@ h1 {
 /* Container principal */
 .container {
     padding: 20px;
-    flex-grow: 1; /* Cela permet de remplir l'espace restant et pousse le footer vers le bas */
+    flex-grow: 1;
 }
 
-/* Menu de navigation */
+/* Menu */
 .first {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     gap: 20px;
     margin-top: 50px;
 }
 
-/* Menu-box - futuriste */
+/* Menu box avec transition */
 .menu-box {
-    background: rgba(0, 0, 0, 0.8); /* Noir */
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex: 1 1 250px;
     max-width: 300px;
     position: relative;
-    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+    box-shadow: var(--box-shadow);
 }
 
 .menu-box:hover {
-    transform: scale(1.05); /* Zoom léger */
-    box-shadow: 0 10px 20px rgba(255, 102, 0, 0.4); /* Ombre au survol */
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 102, 0, 0.4);
 }
 
 .menu-box .clickable-zone {
@@ -90,14 +92,13 @@ h1 {
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0); /* Zone invisible mais cliquable */
+    background: rgba(0, 0, 0, 0);
     border-radius: 10px;
     cursor: pointer;
 }
 
-/* Titre et contenu */
 .box h3 {
-    color: #f8a500; /* Orange clair */
+    color: var(--secondary-color);
     font-size: 1.8rem;
     margin-bottom: 15px;
     letter-spacing: 1px;
@@ -107,46 +108,17 @@ h1 {
 
 .box p {
     font-size: 1.1rem;
-    color: #fff;
+    color: var(--text-color);
     line-height: 1.6;
-}
-
-/* Effet au survol sur les liens */
-.menu-box:hover h3,
-.menu-box:hover p {
-    color: #ff6600; /* Changer la couleur au survol */
-}
-
-/* Section des projets et certifications */
-.projets-content, .certifications-content {
-    margin-top: 40px;
-}
-
-.projets, .certifications {
-    background-color: #333; /* Gris foncé */
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.projets h3, .certifications h3 {
-    color: #ff6600; /* Orange */
-    margin-bottom: 10px;
-}
-
-.projets p, .certifications p {
-    color: #ccc;
-    font-size: 1.1rem;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #222; /* Gris foncé */
+    background-color: var(--footer-bg);
     width: 100%;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère au dessus */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
 
 footer p {
@@ -155,7 +127,7 @@ footer p {
 
 /* Bouton de contact */
 .contact button {
-    background-color: #ff6600; /* Orange */
+    background-color: var(--primary-color);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -165,50 +137,75 @@ footer p {
 }
 
 .contact button:hover {
-    background-color: #ff4c00; /* Orange foncé */
+    background-color: #ff4c00;
 }
 
-/* Orbes flottantes */
+/* Animation d'arrière-plan */
+.animated-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff6600, #f8a500);
+    background-size: 200% 200%;
+    animation: backgroundAnimation 5s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 100% 0; }
+    100% { background-position: 0 100%; }
+}
+
+/* Animation des orbes flottants */
 .floating-orb {
     position: absolute;
     border-radius: 50%;
-    background: rgba(255, 204, 0, 0.3); /* Jaune clair */
+    background: rgba(255, 204, 0, 0.3);
     width: 80px;
     height: 80px;
-    animation: floatOrbs 10s ease-in-out infinite;
+    animation: orbMovement 5s ease-in-out infinite;
 }
 
 .floating-orb:nth-child(1) {
-    left: 30%;
+    top: 10%;
+    left: 15%;
+    animation-delay: 0.5s;
 }
 
 .floating-orb:nth-child(2) {
-    left: 60%;
+    top: 30%;
+    left: 40%;
+    animation-delay: 1s;
 }
 
 .floating-orb:nth-child(3) {
-    left: 80%;
+    top: 60%;
+    left: 70%;
+    animation-delay: 1.5s;
 }
 
-/* Transition de page */
-body.teleport-in {
-    opacity: 0;
-    transform: scale(0.95);
-    animation: teleportIn 1s forwards;
+@keyframes orbMovement {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.2); }
+    100% { transform: translateY(0) scale(1); }
 }
 
-body.teleport-out {
-    opacity: 1;
-    transform: scale(1);
-    animation: teleportOut 1s forwards;
+/* Animations d'entrée */
+.teleport-in {
+    animation: fadeIn 1s ease-in-out;
 }
 
-@keyframes teleportIn {
-    0% { opacity: 0; transform: scale(0.95); }
-    100% { opacity: 1; transform: scale(1); }
+.teleport-out {
+    animation: fadeOut 1s ease-in-out;
 }
 
-@keyframes teleportOut {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(0.95); }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
