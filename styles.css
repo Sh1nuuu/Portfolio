@@ -8,11 +8,11 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    overflow: hidden;
     background-color: #121212;
     color: #fff;
     position: relative;
     transition: all 1s ease-in-out;
+    overflow-x: hidden;
 }
 
 .animated-background {
@@ -26,6 +26,7 @@ body {
     z-index: -1;
 }
 
+/* Animation */
 @keyframes moveBackground {
     0% {
         transform: scale(1) translateX(0);
@@ -35,6 +36,65 @@ body {
     }
 }
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes teleportIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes teleportOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.95); }
+}
+
+@keyframes shooting-star {
+    0% {
+        transform: translateX(0) translateY(0) rotate(45deg);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(110vw) translateY(20vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes floatOrbs {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-30px) scale(1.2);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Header */
 header {
     text-align: center;
     background: rgba(0, 0, 0, 0.7);
@@ -63,20 +123,11 @@ h1 {
     animation-delay: 2s;
     font-weight: 300;
     margin-top: 10px;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-#subText {
-    margin-top: 20px;
     font-style: italic;
     font-weight: 400;
 }
 
-/* Conteneur principal */
+/* Container principal */
 .container {
     padding: 20px;
     position: relative;
@@ -102,8 +153,6 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-
-/* Sur un grand écran, les boîtes occuperont l'espace disponible */
 @media (min-width: 768px) {
     .menu-box {
         flex: 1 1 200px; 
@@ -145,16 +194,6 @@ h1 {
     transform: scale(1.05);
 }
 
-
-/* Application de l'animation à un élément avec une classe spéciale */
-.teleport-out {
-    animation: teleportOut 1s forwards;
-}
-
-.teleport-in {
-    animation: teleportIn 1s forwards;
-}
-
 /* Section des projets et certifications */
 .projets-content, .certifications-content {
     margin-top: 40px;
@@ -192,6 +231,7 @@ footer p {
     margin: 0;
 }
 
+/* Bouton de contact */
 .contact button {
     background-color: #ff0080;
     color: white;
@@ -207,48 +247,7 @@ footer p {
     background-color: #ff4c99;
 }
 
-@keyframes floatOrbs {
-    0% {
-        transform: translateY(0) scale(1);
-    }
-    50% {
-        transform: translateY(-30px) scale(1.2);
-    }
-    100% {
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* Animation de texte */
-#dynamicText {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #fff;
-}
-
-#subText {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: 10px;
-}
-
-/* Bouton de contact */
-button {
-    background-color: #00ccff;
-    color: #1b1b1b;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #00b3e6;
-}
-
-/* Styles pour les étoiles filantes */
+/* Animation des étoiles filantes */
 .floating-shape {
     position: absolute;
     width: 4px;
@@ -274,40 +273,7 @@ button:hover {
     left: 75%;
 }
 
-@keyframes shooting-star {
-    0% {
-        transform: translateX(0) translateY(0) rotate(45deg);
-        opacity: 1;
-    }
-    70% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(110vw) translateY(20vh) rotate(45deg);
-        opacity: 0;
-    }
-}
-
-/* Gradient animation for a dynamic feel */
-.animated-background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(75, 0, 110, 0.5), transparent);
-    animation: moveBackground 10s linear infinite alternate;
-    z-index: -1;
-}
-
-@keyframes moveBackground {
-    0% {
-        transform: scale(1) translateX(0);
-    }
-    100% {
-        transform: scale(1.5) translateX(-20%);
-    }
-}
-
-/* Floating orbs for futuristic detail */
+/* Orbes flottantes */
 .floating-orb {
     position: absolute;
     border-radius: 50%;
@@ -332,19 +298,7 @@ button:hover {
     animation-delay: 4s;
 }
 
-@keyframes floatOrb {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px) translateX(10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* Stars for a cosmic touch */
+/* Etoiles pour un effet cosmique */
 .star {
     position: absolute;
     width: 2px;
@@ -352,11 +306,6 @@ button:hover {
     background: #fff;
     border-radius: 50%;
     animation: twinkle 3s infinite alternate;
-}
-
-@keyframes twinkle {
-    0% { opacity: 0.2; }
-    100% { opacity: 1; }
 }
 
 @keyframes floatingShapes {
@@ -371,7 +320,6 @@ button:hover {
     }
 }
 
-/* Adding stars at random positions */
 .star:nth-child(1) {
     left: 10%;
     top: 20%;
@@ -406,166 +354,15 @@ button:hover {
 
     header {
         text-align: center;
-        margin-top: 20%;
-    }
-    
-
-    footer {
-        font-size: 0.9rem;
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 2.5rem; 
-    }
-
-    #subText {
-        font-size: 1.4rem; 
-        font-weight: 300;
-    }
-
-    .container {
-        width: 90%; 
         margin-top: 20px;
     }
 
     .first {
         flex-direction: column;
-        align-items: center; 
     }
 
     .menu-box {
-        flex: 1 1 100%;
-        margin: 10px 0; 
-        height: auto;
+        margin: 10px 0;
+        width: 100%;
     }
-
-    .box h3 {
-        font-size: 1.3rem;
-    }
-
-    .projets, .certifications {
-        padding: 15px;
-    }
-
-    button {
-        font-size: 1rem; 
-        padding: 8px 15px;
-    }
-}
-    /* Adaptation pour les appareils mobiles */
-@media only screen and (max-width: 768px) {
-    header {
-        margin-top: 10%;
-    }
-
-    #dynamicText {
-        font-size: 2rem;
-    }
-
-    #subText {
-        font-size: 1rem;
-    }
-
-    .menu-box {
-        padding: 15px;
-        margin: 5px 0;
-    }
-
-    .floating-orb {
-        width: 60px;
-        height: 60px;
-    }
-
-    .floating-shape {
-        width: 80px;
-        height: 80px;
-    }
-
-    .contact button {
-        font-size: 0.9rem;
-        padding: 8px 15px;
-    }
-
-    footer {
-        padding: 10px;
-    }
-}
-
-/* Adaptation pour les très petits écrans (smartphones en mode portrait) */
-@media only screen and (max-width: 480px) {
-    header {
-        margin-top: 5%;
-    }
-
-    #dynamicText {
-        font-size: 1.5rem;
-    }
-
-    #subText {
-        font-size: 0.9rem;
-    }
-
-    .menu-box {
-        padding: 10px;
-        margin: 5px 0;
-    }
-
-    .floating-orb {
-        width: 50px;
-        height: 50px;
-    }
-
-    .floating-shape {
-        width: 60px;
-        height: 60px;
-    }
-
-    .contact button {
-        font-size: 0.8rem;
-        padding: 6px 12px;
-    }
-
-    footer {
-        padding: 8px;
-    }
-}
-
-body.teleport-in {
-    opacity: 0;
-    transform: scale(0.95);
-    animation: teleportIn 1s forwards;
-}
-
-body.teleport-out {
-    opacity: 1;
-    transform: scale(1);
-    animation: teleportOut 1s forwards;
-}
-
-@keyframes teleportIn {
-    0% { opacity: 0; transform: scale(0.95); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes teleportOut {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(0.95); }
-}
-
-@keyframes floating {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.floating-orb, .star, .floating-shape {
-    position: absolute;
-    animation: floating 5s ease-in-out infinite;
 }
