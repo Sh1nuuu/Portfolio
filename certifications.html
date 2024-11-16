@@ -38,5 +38,16 @@
         <p>© 2024 Mon Portfolio. Tous droits réservés.</p>
     </footer>
 
+<script>
+    function handleClick(event, page) {
+            event.preventDefault(); 
+            let box = event.currentTarget;
+            box.classList.add('box-click');  
+            setTimeout(function() {
+                window.location.href = page;  
+            }, 800);  
+        }
+</script>
+
 </body>
 </html>
