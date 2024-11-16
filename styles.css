@@ -14,7 +14,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-family: 'Arial', sans-serif; /* Police simple et moderne */
 }
 
 body {
@@ -204,7 +204,7 @@ footer button:hover {
 
 /* Texte dynamique */
 #dynamicText {
-    font-size: 4rem;
+    font-size: 3.5rem; /* Taille un peu réduite pour une police simple */
     color: var(--primary-color);
     font-weight: bold;
     letter-spacing: 4px;
@@ -241,10 +241,4 @@ button {
 
 button:hover {
     transform: translateY(-2px);
-}
-
-/* Styles de police */
-@font-face {
-    font-family: 'Orbitron';
-    src: url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 }
