@@ -107,7 +107,7 @@ h1 {
     text-decoration: none;
     color: white;
     box-shadow: 0 4px 8px rgba(70, 1, 66, 0.363);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     flex: 1 1 200px; 
     height: 250px; 
     max-width: 300px; 
@@ -133,8 +133,9 @@ h1 {
 }
 
 .box:hover {
-    transform: scale(1.05);
+    transform: scale(0.9);
     background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
 }
 
 .box:before {
@@ -158,40 +159,6 @@ h1 {
     left: 50%;
 }
 
-/* Animation d'agrandissement au clic */
-.box-click {
-    animation: scaleUp 0.8s forwards;
-}
-
-@keyframes teleportOut {
-    0% {
-        opacity: 1;
-        transform: scale(1) translateX(0);
-    }
-    50% {
-        opacity: 0;
-        transform: scale(1.2) translateX(100vw);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1.5) translateX(200vw);
-    }
-}
-
-@keyframes teleportIn {
-    0% {
-        opacity: 0;
-        transform: scale(1.5) translateX(-200vw);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.2) translateX(-100vw);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1) translateX(0);
-    }
-}
 
 /* Application de l'animation à un élément avec une classe spéciale */
 .teleport-out {
@@ -253,6 +220,10 @@ footer p {
     font-size: 1.5rem;
     color: #00ccff;
     font-style: italic;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid black;
 }
 
 /* Bouton de contact */
@@ -482,11 +453,47 @@ button:hover {
     }
 }
 
-.text-shadow {
-    animation: shadow 1.5s forwards;
+body.teleport-in {
+    opacity: 0;
+    animation: teleportIn 1s forwards;
 }
 
-@keyframes shadow {
-    0% { text-shadow: 0 0 10px rgba(0, 255, 255, 0.7); }
-    100% { text-shadow: 0 0 20px rgba(0, 255, 255, 1); }
+body.teleport-out {
+    opacity: 1;
+    animation: teleportOut 1s forwards;
+}
+
+@keyframes teleportIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes teleportOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.floating-orb, .star, .floating-shape {
+    position: absolute;
+    animation: floating 5s ease-in-out infinite;
 }

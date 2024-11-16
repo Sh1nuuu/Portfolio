@@ -74,36 +74,30 @@
     <script>
         const text = "ienvenue sur la page de mes projets";
         let index = 0;
-    function typeWriter() {
-        if (index < text.length) {
-            document.getElementById("dynamicText").innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 10);
+
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("dynamicText").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100); // Ajout d'un délai plus long pour mieux voir l'animation
             }
         }
-        window.onload = function() {
+
+        window.onload = function () {
             typeWriter();
+            document.body.classList.add('teleport-in'); // Appliquer l'effet de téléportation à l'arrivée sur la page
         };
 
-        function handleClick(event, page) {
-            event.preventDefault();  
-            let box = event.currentTarget;
-            box.classList.add('box-click');
-            setTimeout(function() {
-                window.location.href = page; 
-            }, 50); 
-        }       
-        
         function changePage(url) {
-            document.body.classList.add('teleport-out');   
-            setTimeout(function() {
-            window.location.href = url;
-            },
-        1000);
-        }   
+            document.body.classList.add('teleport-out'); // Appliquer l'effet de téléportation au départ
+            setTimeout(function () {
+                window.location.href = url; // Rediriger vers la page après l'animation
+            },      
+            1000); // Délai pour laisser le temps à l'animation de se terminer
+        }
 
-        window.addEventListener('load', function() {
-        document.body.classList.add('teleport-in');
+        window.addEventListener('load', function () {
+        document.body.classList.add('teleport-in'); // Appliquer l'animation lors du chargement
         });
 
     </script>
