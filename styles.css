@@ -91,12 +91,12 @@ h1 {
 
 .menu-box a {
     display: block;
-    background-color: #333;
+    background-color: #33333342;
     padding: 30px;
     border-radius: 15px;
     text-decoration: none;
     color: white;
-    box-shadow: 0 4px 8px rgb(38, 0, 255);
+    box-shadow: 0 4px 8px rgb(0, 204, 255, 0.3);
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -109,7 +109,7 @@ h1 {
     left: 50%;
     width: 200%;
     height: 200%;
-    background: rgba(165, 0, 124, 0.384);
+    background: rgba(223, 19, 172, 0.11);
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: transform 0.4s ease;
@@ -121,7 +121,7 @@ h1 {
 
 .menu-box a:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(197, 13, 197, 0.473);
+    box-shadow: 0 4px 12px rgba(197, 13, 197, 0.178);
 }
 
 .menu-box h3 {
