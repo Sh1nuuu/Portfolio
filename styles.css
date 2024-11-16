@@ -26,7 +26,7 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg, rgb(238, 0, 247), rgb(0, 0, 0));
-    animation: movingBackground 6m linear infinite;
+    animation: movingBackground 6s linear infinite;
     z-index: -1;
 }
 
