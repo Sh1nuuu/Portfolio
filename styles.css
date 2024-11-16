@@ -7,7 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 100vh;
 }
 
@@ -71,6 +71,7 @@ h1 {
 .container {
     text-align: center;
     padding: 20px;
+    width: 80%;
 }
 
 .menu h2, .cv h2, .projects h2, .contact h2, .certifications h2 {
@@ -79,22 +80,30 @@ h1 {
     color: #00ccff;
 }
 
-.menu-grid {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
+.menu {
+    margin: 50px 0;
+    padding: 30px;
+    background-color: #222;
+    border-radius: 10px;
 }
 
 .menu-item {
-    background-color: #333;
+    margin: 20px;
     padding: 20px;
+    background-color: #333;
     border-radius: 10px;
-    width: 25%;
     transition: transform 0.3s ease;
 }
 
 .menu-item:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+.projects {
+    margin: 50px 0;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
 }
 
 .project-item {
@@ -113,32 +122,11 @@ h1 {
     transform: scale(1.05);
 }
 
-button {
-    background-color: #00ccff;
-    color: #1b1b1b;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #00b3e6;
-}
-
 .certifications {
     margin: 50px 0;
     padding: 20px;
     background-color: #222;
     border-radius: 10px;
-}
-
-.certifications h2 {
-    color: #00ccff;
-    font-size: 2rem;
-    margin-bottom: 20px;
 }
 
 .certification-item {
@@ -159,6 +147,21 @@ button:hover {
 
 .certification-item img:hover {
     transform: scale(1.05);
+}
+
+button {
+    background-color: #00ccff;
+    color: #1b1b1b;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00b3e6;
 }
 
 footer {
