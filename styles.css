@@ -10,91 +10,8 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #1a1a1a; /* Gris foncé */
     color: #fff;
-    position: relative;
-    transition: all 1s ease-in-out;
-    overflow-x: hidden;
 }
 
-.animated-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #f8a500, #ff6600, #ffb84d); /* Orange clair, orange */
-    animation: animatedBackground 5s infinite alternate;
-    z-index: -1;
-}
-
-/* Animation */
-@keyframes moveBackground {
-    0% {
-        transform: scale(1) translateX(0);
-    }
-    100% {
-        transform: scale(1.5) translateX(-20%);
-    }
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes teleportIn {
-    0% { opacity: 0; transform: scale(0.95); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes teleportOut {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(0.95); }
-}
-
-@keyframes shooting-star {
-    0% {
-        transform: translateX(0) translateY(0) rotate(45deg);
-        opacity: 1;
-    }
-    70% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(110vw) translateY(20vh) rotate(45deg);
-        opacity: 0;
-    }
-}
-
-@keyframes floatOrbs {
-    0% {
-        transform: translateY(0) scale(1);
-    }
-    50% {
-        transform: translateY(-30px) scale(1.2);
-    }
-    100% {
-        transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes twinkle {
-    0% { opacity: 0.2; }
-    100% { opacity: 1; }
-}
-
-@keyframes floating {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* Header */
 header {
     text-align: center;
     background: rgba(0, 0, 0, 0.7);
@@ -102,8 +19,6 @@ header {
     border-radius: 15px;
     margin-top: 50px;
     box-shadow: 1 4px 20px rgba(255, 102, 0, 0.3); /* Ombre orange */
-    position: relative;
-    z-index: 2;
 }
 
 h1 {
@@ -111,16 +26,11 @@ h1 {
     color: #ff6600; /* Orange */
     letter-spacing: 3px;
     margin-bottom: 10px;
-    opacity: 0;
-    animation: fadeIn 2s ease-out forwards;
 }
 
 #subText {
     font-size: 1.8rem;
     color: #f8a500; /* Orange clair */
-    opacity: 0;
-    animation: fadeIn 2s ease-out forwards;
-    animation-delay: 2s;
     font-weight: 300;
     margin-top: 10px;
     font-style: italic;
@@ -130,8 +40,6 @@ h1 {
 /* Container principal */
 .container {
     padding: 20px;
-    position: relative;
-    z-index: 1;
 }
 
 /* Menu de navigation */
@@ -173,25 +81,6 @@ h1 {
 .box:hover {
     transform: scale(0.9);
     background: rgba(255, 255, 255, 0.2);
-    opacity: 0;
-}
-
-.box:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: rgba(255, 102, 0, 0.5); /* Orange */
-    transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
-    border-radius: 50%;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-}
-
-.menu-box:hover {
-    transform: scale(1.05);
 }
 
 /* Section des projets et certifications */
@@ -240,37 +129,10 @@ footer p {
     font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
 .contact button:hover {
     background-color: #ff4c00; /* Orange foncé */
-}
-
-/* Animation des étoiles filantes */
-.floating-shape {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background-color: rgb(255, 204, 0); /* Jaune clair */
-    border-radius: 50%;
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
-    animation: shooting-star linear infinite;
-}
-
-.floating-shape-1 {
-    top: 10%;
-    left: 15%;
-}
-
-.floating-shape-2 {
-    top: 60%;
-    left: 50%;
-}
-
-.floating-shape-3 {
-    top: 40%;
-    left: 75%;
 }
 
 /* Orbes flottantes */
@@ -285,57 +147,12 @@ footer p {
 
 .floating-orb:nth-child(1) {
     left: 30%;
-    animation-delay: 0s;
 }
 
 .floating-orb:nth-child(2) {
     left: 60%;
-    animation-delay: 2s;
 }
 
 .floating-orb:nth-child(3) {
     left: 80%;
-    animation-delay: 4s;
-}
-
-/* Etoiles pour un effet cosmique */
-.star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: #fff;
-    border-radius: 50%;
-    animation: twinkle 3s infinite alternate;
-}
-
-@keyframes floatingShapes {
-    0% {
-        transform: translateY(0) scale(1);
-    }
-    50% {
-        transform: translateY(-30px) scale(1.2);
-    }
-    100% {
-        transform: translateY(0) scale(1);
-    }
-}
-
-.star:nth-child(1) {
-    left: 10%;
-    top: 20%;
-}
-
-.star:nth-child(2) {
-    left: 40%;
-    top: 50%;
-}
-
-.star:nth-child(3) {
-    left: 70%;
-    top: 80%;
-}
-
-.star:nth-child(4) {
-    left: 90%;
-    top: 30%;
 }
