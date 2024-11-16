@@ -86,23 +86,40 @@ h1 {
     background-color: #222;
     border-radius: 10px;
     display: flex;
-    flex-wrap: wrap;  /* Permet de faire passer les items à la ligne si nécessaire */
-    gap: 20px;  /* Espace entre les éléments */
-    justify-content: center;  /* Centrer les éléments */
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
-.first-item {
+.box {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
-    margin-bottom: 20px;
+    width: 30%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 30%;  /* Largeur de chaque élément */
     transition: transform 0.3s ease;
+    margin-bottom: 20px;
 }
 
-.first-item:hover {
+.box h3 {
+    color: #00ccff;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.box p {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.box:hover {
     transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .box {
+        width: 100%;  /* Réduit la largeur à 100% sur les petits écrans */
+    }
 }
 
 button {
