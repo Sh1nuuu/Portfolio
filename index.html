@@ -8,39 +8,41 @@
 </head>
 
 <body>
-   
-    <header>
-<h1>M</h1>
-    </header>
-
     <div class="animated-background"></div>
 
+    <header>
+        <h1 id="dynamicText">M</h1>
+    </header>
+    
     <div class="container">
-        <section class="intro">
-            <h2>Bienvenue surr mon Portfolio de présentation</h2>
-            <p>Explorez les sections pour en savoir plus.</p>
-        </section>
-
-        <section class="skills">
-            <h2>Compétences</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <h3>Réseaux</h3>
-                    <p>Maîtrise des technologies réseau (Wi-Fi, 5G, Ethernet, etc.)</p>
+        <!-- Section Menu -->
+        <section class="menu">
+            <h2>Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Mon CV</h3>
+                    <p>Découvrez mon parcours professionnel et mes expériences.</p>
                 </div>
-                <div class="skill-item">
-                    <h3>IoT</h3>
-                    <p>Capteurs intelligents, automatisation, gestion des objets connectés.</p>
+                <div class="menu-item">
+                    <h3>Mes Projets</h3>
+                    <p>Explorez mes projets liés aux technologies IoT et réseaux.</p>
                 </div>
-                <div class="skill-item">
-                    <h3>Sécurité</h3>
-                    <p>Protection des données, cryptographie et gestion des accès.</p>
+                <div class="menu-item">
+                    <h3>Certification</h3>
+                    <p>Consultez mes certifications en réseaux et IoT.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Section Mon CV -->
+        <section class="cv">
+            <h2>Mon CV</h2>
+            <p>Ici tu peux ajouter des informations détaillées sur ton parcours professionnel, ton éducation, etc.</p>
+        </section>
+
+        <!-- Section Mes Projets -->
         <section class="projects">
-            <h2>Projets récents</h2>
+            <h2>Mes Projets</h2>
             <div class="project-item">
                 <img src="project1.jpg" alt="Projet 1">
                 <h3>Projet IoT - Système de surveillance</h3>
@@ -53,6 +55,7 @@
             </div>
         </section>
 
+        <!-- Section Certifications -->
         <section class="certifications">
             <h2>Certifications</h2>
             <div class="certification-item">
@@ -86,7 +89,6 @@
                 setTimeout(typeWriter, 100);
             }
         }
-
         window.onload = function() {
             typeWriter();
         };

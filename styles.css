@@ -39,12 +39,10 @@ header {
 }
 
 h1 {
-    font-size: 3rem;
-    text-align: center;
+    font-size: 3.5rem;
     color: #00ccff;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin: 20px 0;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
     opacity: 0;
     animation: fadeIn 2s ease-out forwards;
 }
@@ -70,25 +68,24 @@ h1 {
     font-weight: 400;
 }
 
-
 .container {
     text-align: center;
     padding: 20px;
 }
 
-.intro h2, .skills h2, .projects h2, .contact h2 {
+.menu h2, .cv h2, .projects h2, .contact h2, .certifications h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #00ccff;
 }
 
-.skills-grid {
+.menu-grid {
     display: flex;
     justify-content: space-around;
     margin: 20px 0;
 }
 
-.skill-item {
+.menu-item {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
@@ -96,7 +93,7 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-.skill-item:hover {
+.menu-item:hover {
     transform: scale(1.1);
 }
 
