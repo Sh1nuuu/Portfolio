@@ -101,7 +101,7 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
-    text-decoration: none;  /* Enlever la décoration de lien */
+    text-decoration: none;  /* Enlever le soulignement */
     color: white;  /* Couleur du texte */
     display: block;
     height: 200px;  /* Hauteur pour donner un bon effet */
