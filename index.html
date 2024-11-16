@@ -49,7 +49,7 @@
     </footer>
 
     <script>
-        const text = "Bienvenue sur mon Portfolio de Présentation.";
+        const text = "ienvenue sur mon Portfolio de Présentation.";
         let index = 0;
         function typeWriter() {
             if (index < text.length) {
@@ -63,12 +63,12 @@
         };
 
         function handleClick(event, page) {
-            event.preventDefault();  // Empêche la navigation immédiate
+            event.preventDefault();  
             let box = event.currentTarget;
-            box.classList.add('box-click');  // Ajoute une classe pour l'animation
+            box.classList.add('box-click'); 
             setTimeout(function() {
-                window.location.href = page;  // Navigue vers la page après l'animation
-            }, 500);  // Délai de 500ms pour que l'animation soit visible
+                window.location.href = page;  
+            }, 500);
         }
     </script>
 </body>
