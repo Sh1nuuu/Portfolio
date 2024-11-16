@@ -68,9 +68,9 @@ h1 {
 
 /* Conteneur principal */
 .container {
-    width: 80%;
+    width: 60%;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 300px;
 }
 
 /* Menu de navigation */
@@ -84,8 +84,8 @@ h1 {
 
 .menu-box {
     width: 30%;
-    min-width: 250px;
-    max-width: 350px;
+    min-width: 20px;
+    max-width: 250px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
