@@ -82,8 +82,8 @@ h1 {
     width: 60%;
     text-align: center;
     margin-top: 30px;
+    flex-grow: 1; 
 }
-
 /* Menu de navigation */
 .first {
     display: flex;
@@ -187,10 +187,9 @@ footer {
     text-align: center;
     padding: 20px;
     font-size: 1rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
+    position: relative; 
+    width : 100%;
+    margin-top: auto; 
 }
 
 footer p {
@@ -374,6 +373,11 @@ button:hover {
     header {
         padding: 30px 15px;
         margin-top: 20px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 15px;
     }
 
     h1 {
