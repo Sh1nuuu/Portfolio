@@ -6,15 +6,12 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1b1b1b;
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     overflow: hidden;
+    background: linear-gradient(135deg, #1e0033, #4b006e);
+    position: relative;
 }
 
 .animated-background {
@@ -221,48 +218,93 @@ button:hover {
 }
 
 
-/* Styles pour les étoiles filantes */
-.floating-shape {
+/* Gradient animation for a dynamic feel */
+.animated-background {
     position: absolute;
-    width: 4px;
-    height: 4px;
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
-    animation: shooting-star linear infinite;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(75, 0, 110, 0.5), transparent);
+    animation: moveBackground 10s linear infinite alternate;
+    z-index: -1;
 }
 
-.floating-shape-1 {
-    top: 20%;
-    left: -50%;
-    animation-duration: 3s;
-    animation-delay: 1s;
-}
-
-.floating-shape-2 {
-    top: 50%;
-    left: -50%;
-    animation-duration: 4s;
-    animation-delay: 2s;
-}
-
-.floating-shape-3 {
-    top: 80%;
-    left: -50%;
-    animation-duration: 2s;
-    animation-delay: 3s;
-}
-
-@keyframes shooting-star {
+@keyframes moveBackground {
     0% {
-        transform: translateX(0) translateY(0) rotate(45deg);
-        opacity: 1;
-    }
-    70% {
-        opacity: 1;
+        transform: scale(1) translateX(0);
     }
     100% {
-        transform: translateX(110vw) translateY(20vh) rotate(45deg);
-        opacity: 0;
+        transform: scale(1.5) translateX(-20%);
     }
 }
+
+/* Floating orbs for futuristic detail */
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
+    animation: floatOrb 8s ease-in-out infinite;
+}
+
+.floating-orb:nth-child(1) {
+    width: 50px;
+    height: 50px;
+    top: 20%;
+    left: 10%;
+    animation-duration: 6s;
+}
+
+.floating-orb:nth-child(2) {
+    width: 30px;
+    height: 30px;
+    top: 40%;
+    left: 70%;
+    animation-duration: 8s;
+}
+
+.floating-orb:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    top: 70%;
+    left: 30%;
+    animation-duration: 10s;
+}
+
+@keyframes floatOrb {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Stars for a cosmic touch */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 5px white;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Adding stars at random positions */
+.star:nth-child(1) { top: 10%; left: 15%; }
+.star:nth-child(2) { top: 30%; left: 50%; }
+.star:nth-child(3) { top: 60%; left: 80%; }
+.star:nth-child(4) { top: 85%; left: 25%; }
+.star:nth-child(5) { top: 40%; left: 15%; }
