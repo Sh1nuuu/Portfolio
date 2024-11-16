@@ -101,14 +101,13 @@ h1 {
 }
 
 .box {
-    flex: 1 1 calc(25% - 40px); /* Adjust for 4 items per row with spacing */
     margin: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid #ffffff30;
+    background: rgba(39, 38, 38, 0.74);
+    border: 2px solid #0a0000a1;
     border-radius: 10px;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(1, 181, 226, 0.562);
     transition: transform 0.3s, background 0.3s;
 }
 
@@ -135,7 +134,7 @@ h1 {
     left: 50%;
     width: 300%;
     height: 300%;
-    background: rgba(0, 204, 255, 0.3);
+    background: rgba(105, 1, 100, 0.596);
     transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
     border-radius: 50%;
     z-index: -1;
