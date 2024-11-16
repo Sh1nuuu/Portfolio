@@ -1,14 +1,19 @@
-body {
-    font-family: 'Arial', sans-serif;
+/* Style de base */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
     background-color: #1b1b1b;
     color: #fff;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    min-height: 100vh;
 }
 
 .animated-background {
@@ -27,6 +32,7 @@ body {
     100% { background-position: 100% 100%; }
 }
 
+/* Header */
 header {
     text-align: center;
     background: rgba(0, 0, 0, 0.7);
@@ -62,107 +68,122 @@ h1 {
     100% { opacity: 1; }
 }
 
-#subText {
-    margin-top: 20px;
-    font-style: italic;
-    font-weight: 400;
-}
-
+/* Conteneur principal */
 .container {
-    text-align: center;
-    padding: 20px;
     width: 80%;
+    text-align: center;
+    margin-top: 50px;
 }
 
-.first h2, .contact h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #00ccff;
-}
-
+/* Menu de navigation */
 .first {
-    margin: 50px 0;
-    padding: 20px;
-    background-color: #222;
-    border-radius: 10px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .menu-box {
     width: 30%;
+    min-width: 250px;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.box {
+.menu-box a {
+    display: block;
     background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;  
-    color: white;  
-    display: block;
-    height: 200px;  
-    position: relative;
-    overflow: hidden;
 }
 
-.box h3 {
+.menu-box a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 204, 255, 0.6);
+}
+
+.menu-box h3 {
+    font-size: 1.8rem;
     color: #00ccff;
-    font-size: 1.6rem;
     margin-bottom: 10px;
 }
 
-.box p {
-    font-size: 1.1rem;
-    color: #fff;
+.menu-box p {
+    font-size: 1rem;
+    color: #ccc;
 }
 
-.box:hover {
-    transform: scale(1.05);
-    background-color: #444;
-    box-shadow: 0 8px 16px rgba(0, 204, 255, 0.5);
-}
-
-.box:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: rgba(0, 204, 255, 0.3);
-    transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
-    border-radius: 50%;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-}
-
-.box:hover:before {
-    width: 0;
-    height: 0;
-    top: 50%;
-    left: 50%;
-}
-
-/* Animation d'agrandissement au clic */
+/* Effet de clic sur les boxes */
 .box-click {
-    animation: scaleUp 0.8s forwards;
+    animation: expand 0.8s forwards;
 }
 
-@keyframes scaleUp {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(10);  /* La boîte s'agrandit pour couvrir l'écran */
-        opacity: 0;
-    }
+@keyframes expand {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 0; }
 }
 
+/* Section des projets et certifications */
+.projets-content, .certifications-content {
+    margin-top: 40px;
+}
+
+.project, .certification {
+    background-color: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project h3, .certification h3 {
+    color: #00ccff;
+    margin-bottom: 10px;
+}
+
+.project p, .certification p {
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #1b1b1b;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Animation de texte */
+#dynamicText {
+    font-size: 3rem;
+    color: #00ccff;
+    letter-spacing: 4px;
+    opacity: 0;
+}
+
+#subText {
+    font-size: 1.5rem;
+    color: #00ccff;
+    font-style: italic;
+}
+
+/* Bouton de contact */
 button {
     background-color: #00ccff;
     color: #1b1b1b;
@@ -178,12 +199,3 @@ button:hover {
     background-color: #00b3e6;
 }
 
-footer {
-    background-color: #1b1b1b;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}

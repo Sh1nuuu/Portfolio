@@ -11,7 +11,7 @@
     <div class="animated-background"></div>
 
     <header>
-        <h1>Mon CV</h1>
+        <h1>B</h1>
         <p>Explorez mon parcours professionnel, mes compétences et mes expériences.</p>
     </header>
 
@@ -19,41 +19,54 @@
         <section class="first">
             <div class="menu-box">
                 <a href="index.html" class="box" id="index" onclick="handleClick(event, 'index.html')">
-                    <h3>Acceuil</h3>
+                    <h3>Accueil</h3>
                     <p>Reviens au début.</p>
                 </a>
             </div>
             <div class="menu-box">
-                <a href="projets.html" class="box" id="projet" onclick="handleClick(event, 'projets.html')">
+                <a href="projets.html" class="box" id="projets" onclick="handleClick(event, 'projets.html')">
                     <h3>Mes Projets</h3>
                     <p>Explorez mes projets liés aux technologies IoT et réseaux.</p>
                 </a>
             </div>
             <div class="menu-box">
-                <a href="certifications.html" class="box" id="certification" onclick="handleClick(event, 'certifications.html')">
+                <a href="certifications.html" class="box" id="certifications" onclick="handleClick(event, 'certifications.html')">
                     <h3>Certification</h3>
                     <p>Consultez mes certifications en réseaux et IoT.</p>
                 </a>
             </div>
         </section>
 
+    </div>
+
     <footer>
         <p>© 2024 Mon Portfolio. Tous droits réservés.</p>
     </footer>
 
-        <script>
-             window.onload = function() {
+    <script>
+        window.onload = function() {
             typeWriter();
         };
-        
-            function handleClick(event, page) {
-                event.preventDefault();  
-                let box = event.currentTarget;
-                box.classList.add('box-click');  
-                setTimeout(function() {
-                    window.location.href = page;  
-                    }, 800);  
-            }          
-        </script>
+
+        function handleClick(event, page) {
+            event.preventDefault();  
+            let box = event.currentTarget;
+            box.classList.add('box-click');  
+            setTimeout(function() {
+                window.location.href = page; 
+            }, 800); 
+        }
+
+        const text = "ienvenue sur mon CV, découvrez mon parcours et mes compétences.";
+        let index = 0;
+        function typeWriter() {
+            if (index < text.length) {
+                document.querySelector("header p").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+    </script>
+
 </body>
 </html>

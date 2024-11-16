@@ -12,46 +12,72 @@
 
     <header>
         <h1>Mes Projets</h1>
-        <p>Découvrez mes projets réalisés dans les domaines des réseaux et IoT.</p>
+        <p>Découvrez les projets passionnants que j'ai réalisés en IoT et réseaux.</p>
     </header>
 
-    <section class="first">
-        <div class="menu-box">
-            <a href="index.html" class="box" id="index" onclick="handleClick(event, 'index.html')">
-                <h3>Acceuil</h3>
-                <p>Reviens au début.</p>
-            </a>
-        </div>
-        <div class="menu-box">
-            <a href="cv.html" class="box" id="cv" onclick="handleClick(event, 'cv.html')">
-                <h3>Mon CV</h3>
-                <p>Découvrez mon parcours professionnel et mes expériences.</p>
-            </a>
-        </div>
-        <div class="menu-box">
-            <a href="certifications.html" class="box" id="certification" onclick="handleClick(event, 'certifications.html')">
-                <h3>Certification</h3>
-                <p>Consultez mes certifications en réseaux et IoT.</p>
-            </a>
-        </div>
-    </section>
+    <div class="container">
+        <section class="first">
+            <div class="menu-box">
+                <a href="index.html" class="box" id="index" onclick="handleClick(event, 'index.html')">
+                    <h3>Accueil</h3>
+                    <p>Reviens au début.</p>
+                </a>
+            </div>
+            <div class="menu-box">
+                <a href="cv.html" class="box" id="cv" onclick="handleClick(event, 'cv.html')">
+                    <h3>Mon CV</h3>
+                    <p>Consultez mon parcours professionnel et mes expériences.</p>
+                </a>
+            </div>
+            <div class="menu-box">
+                <a href="certifications.html" class="box" id="certifications" onclick="handleClick(event, 'certifications.html')">
+                    <h3>Certification</h3>
+                    <p>Consultez mes certifications en réseaux et IoT.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="projets-content">
+            <h2>Projets IoT et Réseaux</h2>
+            <p>Voici quelques-uns de mes projets récents, où j'ai appliqué mes compétences en technologies IoT et réseaux.</p>
+            <!-- Exemple de projet -->
+            <div class="project">
+                <h3>Capteurs IoT dans un hôpital</h3>
+                <p>Développement d'un système de surveillance basé sur des capteurs IoT pour surveiller l'environnement hospitalier, y compris la température, l'humidité, et la qualité de l'air.</p>
+            </div>
+            <div class="project">
+                <h3>Réseau de Communication pour Smart Cities</h3>
+                <p>Création d'un réseau de capteurs interconnectés pour la gestion de la circulation et la qualité de l'air dans les villes intelligentes.</p>
+            </div>
+        </section>
+    </div>
 
     <footer>
         <p>© 2024 Mon Portfolio. Tous droits réservés.</p>
     </footer>
 
     <script>
-         window.onload = function() {
+        window.onload = function() {
             typeWriter();
         };
-        
+
         function handleClick(event, page) {
-            event.preventDefault(); 
+            event.preventDefault();  
             let box = event.currentTarget;
-            box.classList.add('box-click');  
+            box.classList.add('box-click');
             setTimeout(function() {
-                window.location.href = page;  
-            }, 800);  
+                window.location.href = page; 
+            }, 800); 
+        }
+
+        const text = "Bienvenue sur la page de mes projets, découvrez mes réalisations dans le domaine IoT et réseaux.";
+        let index = 0;
+        function typeWriter() {
+            if (index < text.length) {
+                document.querySelector("header p").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
         }
     </script>
 
