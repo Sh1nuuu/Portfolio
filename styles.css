@@ -220,12 +220,6 @@ button:hover {
     background-color: #00b3e6;
 }
 
-/* Animation des formes géométriques en fond */
-@keyframes floatingShapes {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-50px); }
-    100% { transform: translateY(0); }
-}
 
 /* Styles pour les étoiles filantes */
 .floating-shape {
@@ -240,22 +234,22 @@ button:hover {
 
 .floating-shape-1 {
     top: 20%;
-    left: -5%;
-    animation-duration: 4s;
+    left: -50%;
+    animation-duration: 10s;
     animation-delay: 1s;
 }
 
 .floating-shape-2 {
     top: 50%;
-    left: -5%;
+    left: -50%;
     animation-duration: 5s;
     animation-delay: 2s;
 }
 
 .floating-shape-3 {
     top: 80%;
-    left: -5%;
-    animation-duration: 6s;
+    left: -50%;
+    animation-duration: 15s;
     animation-delay: 3s;
 }
 
