@@ -29,19 +29,19 @@
     <div class="container">
         <section class="first">
             <div class="menu-box">
-                <a href="index.html" class="box" id="index" onclick="handleClick(event, 'index.html')">
+                <a href="index.html" class="box" id="cv" onclick="event.preventDefault(); changePage('index.html');">
                     <h3>Accueil</h3>
                     <p>Reviens au début.</p>
                 </a>
             </div>
             <div class="menu-box">
-                <a href="cv.html" class="box" id="cv" onclick="handleClick(event, 'cv.html')">
+                <a href="cv.html" class="box" id="cv" onclick="event.preventDefault(); changePage('cv.html');">
                     <h3>Mon CV</h3>
                     <p>Consultez mon parcours professionnel et mes expériences</p>
                 </a>
             </div>
             <div class="menu-box">
-                <a href="projets.html" class="box" id="projets" onclick="handleClick(event, 'projets.html')">
+                <a href="projets.html" class="box" id="projects" onclick="event.preventDefault(); changePage('projets.html');">
                     <h3>Mes Projets</h3>
                     <p>Explorez mes projets liés aux technologies IoT et réseaux</p>
                 </a>
@@ -91,7 +91,20 @@
             setTimeout(function() {
                 window.location.href = page; 
             }, 50); 
-        }        
+        }     
+        
+        function changePage(url) {
+            document.body.classList.add('teleport-out');   
+            setTimeout(function() {
+            window.location.href = url;
+            },
+        1000);
+        }   
+
+        window.addEventListener('load', function() {
+        document.body.classList.add('teleport-in');
+        });
+
     </script>
 
 </body>
