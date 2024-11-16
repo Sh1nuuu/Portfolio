@@ -10,7 +10,7 @@ body {
     padding: 0;
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(255deg, #050008, #4b006e);
+    background: linear-gradient(55deg, #050008, #4b006e);
     position: relative;
 }
 
@@ -83,9 +83,9 @@ h1 {
 }
 
 .menu-box {
-    width: 90%;
-    min-width: 200px;
-    max-width: 250px;
+    width: 20%;
+    min-width: 300px;
+    max-width: 350px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
@@ -122,7 +122,7 @@ h1 {
 
 .menu-box a:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 204, 255, 0.6);
+    box-shadow: 0 4px 12px rgba(39, 0, 39, 0.6);
 }
 
 .menu-box h3 {
