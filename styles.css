@@ -102,3 +102,52 @@ button {
 button:hover {
     background-color: #00b3e6;
 }
+
+.certifications {
+    margin: 50px 0;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+}
+
+.certifications h2 {
+    color: #00ccff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.certification-item {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.certification-item img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.certification-item img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #1b1b1b;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+footer p {
+    margin: 0;
+}
