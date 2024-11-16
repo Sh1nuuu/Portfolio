@@ -1,0 +1,16 @@
+body {
+    background: black;
+    overflow: hidden;
+  }
+  .animated-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent, #00ffcc, transparent);
+    animation: moveBackground 10s linear infinite;
+  }
+  @keyframes moveBackground {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+  
