@@ -6,7 +6,9 @@
 }
 
 body {
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assure que le body prend toute la hauteur de la fenêtre */
     font-family: 'Arial', sans-serif;
     background-color: #1a1a1a; /* Gris foncé */
     color: #fff;
@@ -23,18 +25,7 @@ body {
     animation: animateBackground 15s infinite linear;
 }
 
-@keyframes animateBackground {
-    0% {
-        background: linear-gradient(45deg, #ff6600, #f8a500);
-    }
-    50% {
-        background: linear-gradient(45deg, #f8a500, #ff6600);
-    }
-    100% {
-        background: linear-gradient(45deg, #ff6600, #f8a500);
-    }
-}
-
+/* Header */
 header {
     text-align: center;
     background: rgba(0, 0, 0, 0.7);
@@ -63,6 +54,7 @@ h1 {
 /* Container principal */
 .container {
     padding: 20px;
+    flex-grow: 1; /* Cela permet de remplir l'espace restant et pousse le footer vers le bas */
 }
 
 /* Menu de navigation */
@@ -153,9 +145,8 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: #222; /* Gris foncé */
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère au dessus */
 }
 
 footer p {
