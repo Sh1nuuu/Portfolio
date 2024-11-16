@@ -40,7 +40,7 @@ header {
     padding: 60px 20px;
     border-radius: 15px;
     margin-top: 50px;
-    box-shadow: 0 4px 20px rgba(0, 204, 255, 0.3);
+    box-shadow: 1 4px 20px rgba(0, 204, 255, 0.3);
     position: relative;
     z-index: 2;
 }
