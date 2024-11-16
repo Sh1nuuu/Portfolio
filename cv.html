@@ -66,7 +66,7 @@
             if (index < text.length) {
                 document.getElementById("dynamicText").innerHTML += text.charAt(index);
                 index++;
-                setTimeout(typeWriter, 100); 
+                requestAnimationFrame(typeWriter); 
             }
         }
 
