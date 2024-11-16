@@ -8,7 +8,7 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #121212;
+    background-color: #1a1a1a; /* Gris foncé */
     color: #fff;
     position: relative;
     transition: all 1s ease-in-out;
@@ -21,7 +21,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #ff0080, #ff8c00, #ffea00);
+    background: linear-gradient(45deg, #f8a500, #ff6600, #ffb84d); /* Orange clair, orange */
     animation: animatedBackground 5s infinite alternate;
     z-index: -1;
 }
@@ -101,14 +101,14 @@ header {
     padding: 60px 20px;
     border-radius: 15px;
     margin-top: 50px;
-    box-shadow: 1 4px 20px rgba(0, 204, 255, 0.3);
+    box-shadow: 1 4px 20px rgba(255, 102, 0, 0.3); /* Ombre orange */
     position: relative;
     z-index: 2;
 }
 
 h1 {
     font-size: 3.5rem;
-    color: #00ccff;
+    color: #ff6600; /* Orange */
     letter-spacing: 3px;
     margin-bottom: 10px;
     opacity: 0;
@@ -117,7 +117,7 @@ h1 {
 
 #subText {
     font-size: 1.8rem;
-    color: #00ccff;
+    color: #f8a500; /* Orange clair */
     opacity: 0;
     animation: fadeIn 2s ease-out forwards;
     animation-delay: 2s;
@@ -146,7 +146,7 @@ h1 {
 }
 
 .menu-box {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8); /* Noir */
     padding: 20px;
     border-radius: 10px;
     margin: 10px 0;
@@ -160,7 +160,7 @@ h1 {
 }
 
 .box h3 {
-    color: #00ccff;
+    color: #f8a500; /* Orange clair */
     font-size: 1.6rem;
     margin-bottom: 10px;
 }
@@ -183,7 +183,7 @@ h1 {
     left: 50%;
     width: 300%;
     height: 300%;
-    background: rgba(105, 1, 100, 0.596);
+    background: rgba(255, 102, 0, 0.5); /* Orange */
     transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
     border-radius: 50%;
     z-index: -1;
@@ -200,7 +200,7 @@ h1 {
 }
 
 .projets, .certifications {
-    background-color: #333;
+    background-color: #333; /* Gris foncé */
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -208,7 +208,7 @@ h1 {
 }
 
 .projets h3, .certifications h3 {
-    color: #00ccff;
+    color: #ff6600; /* Orange */
     margin-bottom: 10px;
 }
 
@@ -221,7 +221,7 @@ h1 {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #222;
+    background-color: #222; /* Gris foncé */
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -233,7 +233,7 @@ footer p {
 
 /* Bouton de contact */
 .contact button {
-    background-color: #ff0080;
+    background-color: #ff6600; /* Orange */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -244,7 +244,7 @@ footer p {
 }
 
 .contact button:hover {
-    background-color: #ff4c99;
+    background-color: #ff4c00; /* Orange foncé */
 }
 
 /* Animation des étoiles filantes */
@@ -252,7 +252,7 @@ footer p {
     position: absolute;
     width: 4px;
     height: 4px;
-    background-color: rgb(145, 141, 141);
+    background-color: rgb(255, 204, 0); /* Jaune clair */
     border-radius: 50%;
     box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
     animation: shooting-star linear infinite;
@@ -277,7 +277,7 @@ footer p {
 .floating-orb {
     position: absolute;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 204, 0, 0.3); /* Jaune clair */
     width: 80px;
     height: 80px;
     animation: floatOrbs 10s ease-in-out infinite;
@@ -338,31 +338,4 @@ footer p {
 .star:nth-child(4) {
     left: 90%;
     top: 30%;
-}
-
-.star:nth-child(5) {
-    left: 80%;
-    top: 60%;
-}
-
-/* Pour les petits écrans (mobiles) */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    header {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .first {
-        flex-direction: column;
-    }
-
-    .menu-box {
-        margin: 10px 0;
-        width: 100%;
-    }
 }
