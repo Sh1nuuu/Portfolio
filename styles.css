@@ -47,7 +47,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: stretch; 
+    align-items: stretch;
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
@@ -55,18 +55,40 @@ h1 {
 
 .menu-box {
     background: rgba(0, 0, 0, 0.8); /* Noir */
-    padding: 20px;
+    padding: 15px; /* Réduit la taille de la box */
     border-radius: 10px;
     margin: 10px 0;
     transition: transform 0.3s ease; /* Ajout de la transition */
+    position: relative;
+    flex: 1 1 150px; /* Boîte plus petite */
+    max-width: 200px;
+}
+
+.menu-box .clickable-zone {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0); /* Zone invisible mais cliquable */
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 @media (min-width: 768px) {
     .menu-box {
-        flex: 1 1 200px; 
+        flex: 1 1 200px;
     }
 }
 
+/* Effet de zoom au survol */
+.menu-box:hover {
+    transform: scale(1.05); /* Zoom léger */
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Contenu à l'intérieur des boxes */
 .box h3 {
     color: #f8a500; /* Orange clair */
     font-size: 1.6rem;
@@ -76,12 +98,6 @@ h1 {
 .box p {
     font-size: 1.1rem;
     color: #fff;
-}
-
-/* Effet de zoom au survol */
-.menu-box:hover {
-    transform: scale(1.05); /* Zoom léger */
-    background: rgba(255, 255, 255, 0.2);
 }
 
 /* Section des projets et certifications */
