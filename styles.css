@@ -58,7 +58,7 @@ h1 {
     padding: 20px;
     border-radius: 10px;
     margin: 10px 0;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Ajout de la transition */
 }
 
 @media (min-width: 768px) {
@@ -78,8 +78,9 @@ h1 {
     color: #fff;
 }
 
-.box:hover {
-    transform: scale(0.9);
+/* Effet de zoom au survol */
+.menu-box:hover {
+    transform: scale(1.05); /* Zoom léger */
     background: rgba(255, 255, 255, 0.2);
 }
 
@@ -155,4 +156,27 @@ footer p {
 
 .floating-orb:nth-child(3) {
     left: 80%;
+}
+
+/* Transition de page */
+body.teleport-in {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: teleportIn 1s forwards;
+}
+
+body.teleport-out {
+    opacity: 1;
+    transform: scale(1);
+    animation: teleportOut 1s forwards;
+}
+
+@keyframes teleportIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes teleportOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.95); }
 }
