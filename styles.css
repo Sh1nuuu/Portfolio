@@ -6,24 +6,23 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #8d028db9;
-    color: #2f013a;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    background-color: #121212;
+    color: #fff;
+    position: relative;
+    transition: all 1s ease-in-out;
 }
 
 .animated-background {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(75, 0, 110, 0.5), transparent);
-    animation: moveBackground 10s linear infinite alternate;
+    background: linear-gradient(45deg, #ff0080, #ff8c00, #ffea00);
+    animation: animatedBackground 5s infinite alternate;
     z-index: -1;
 }
 
@@ -79,11 +78,11 @@ h1 {
 
 /* Conteneur principal */
 .container {
-    width: 60%;
-    text-align: center;
-    margin-top: 30px;
-    flex-grow: 1; 
+    padding: 20px;
+    position: relative;
+    z-index: 1;
 }
+
 /* Menu de navigation */
 .first {
     display: flex;
@@ -96,17 +95,13 @@ h1 {
 }
 
 .menu-box {
-    display: block;
-    background-color: #333;
-    padding: 30px;
-    border-radius: 15px;
-    text-decoration: none;
-    color: white;
-    box-shadow: 0 4px 8px rgba(70, 1, 66, 0.363);
-    position: relative;
-    overflow: hidden;
-    transition: none; 
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    transition: transform 0.3s ease;
 }
+
 
 /* Sur un grand écran, les boîtes occuperont l'espace disponible */
 @media (min-width: 768px) {
@@ -147,8 +142,7 @@ h1 {
 }
 
 .menu-box:hover {
-    transform: none; 
-    background: none; 
+    transform: scale(1.05);
 }
 
 
@@ -186,36 +180,56 @@ h1 {
 
 /* Footer */
 footer {
-    background-color: #1b1b1b;
-    color: #fff;
     text-align: center;
     padding: 20px;
-    font-size: 1rem;
-    position: relative; 
-    width : 100%;
-    margin-top: auto; 
+    background-color: #222;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 footer p {
     margin: 0;
 }
 
+.contact button {
+    background-color: #ff0080;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #ff4c99;
+}
+
+@keyframes floatOrbs {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-30px) scale(1.2);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
 /* Animation de texte */
 #dynamicText {
     font-size: 3rem;
-    color: #00ccff;
-    letter-spacing: 4px;
-    opacity: 0;
+    font-weight: bold;
+    color: #fff;
 }
 
 #subText {
-    font-size: 1.5rem;
-    color: #00ccff;
-    font-style: italic;
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid black;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 10px;
 }
 
 /* Bouton de contact */
@@ -246,24 +260,18 @@ button:hover {
 }
 
 .floating-shape-1 {
-    top: 20%;
-    left: -5%;
-    animation-duration: 4s;
-    animation-delay: 1s;
+    top: 10%;
+    left: 15%;
 }
 
 .floating-shape-2 {
-    top: 50%;
-    left: -5%;
-    animation-duration: 5s;
-    animation-delay: 2s;
+    top: 60%;
+    left: 50%;
 }
 
 .floating-shape-3 {
-    top: 80%;
-    left: -5%;
-    animation-duration: 6s;
-    animation-delay: 3s;
+    top: 40%;
+    left: 75%;
 }
 
 @keyframes shooting-star {
@@ -303,33 +311,25 @@ button:hover {
 .floating-orb {
     position: absolute;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
-    animation: floatOrb 8s ease-in-out infinite;
+    background: rgba(255, 255, 255, 0.3);
+    width: 80px;
+    height: 80px;
+    animation: floatOrbs 10s ease-in-out infinite;
 }
 
 .floating-orb:nth-child(1) {
-    width: 50px;
-    height: 50px;
-    top: 20%;
-    left: 10%;
-    animation-duration: 6s;
+    left: 30%;
+    animation-delay: 0s;
 }
 
 .floating-orb:nth-child(2) {
-    width: 30px;
-    height: 30px;
-    top: 40%;
-    left: 70%;
-    animation-duration: 8s;
+    left: 60%;
+    animation-delay: 2s;
 }
 
 .floating-orb:nth-child(3) {
-    width: 40px;
-    height: 40px;
-    top: 70%;
-    left: 30%;
-    animation-duration: 10s;
+    left: 80%;
+    animation-delay: 4s;
 }
 
 @keyframes floatOrb {
@@ -349,27 +349,53 @@ button:hover {
     position: absolute;
     width: 2px;
     height: 2px;
-    background: white;
+    background: #fff;
     border-radius: 50%;
-    box-shadow: 0 0 5px rgb(228, 184, 184);
     animation: twinkle 3s infinite alternate;
 }
 
 @keyframes twinkle {
-    from {
-        opacity: 0.5;
+    0% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+@keyframes floatingShapes {
+    0% {
+        transform: translateY(0) scale(1);
     }
-    to {
-        opacity: 1;
+    50% {
+        transform: translateY(-30px) scale(1.2);
+    }
+    100% {
+        transform: translateY(0) scale(1);
     }
 }
 
 /* Adding stars at random positions */
-.star:nth-child(1) { top: 20%; left: 25%; }
-.star:nth-child(2) { top: 40%; left: 60%; }
-.star:nth-child(3) { top: 60%; left: 80%; }
-.star:nth-child(4) { top: 85%; left: 35%; }
-.star:nth-child(5) { top: 0%; left: 25%; }
+.star:nth-child(1) {
+    left: 10%;
+    top: 20%;
+}
+
+.star:nth-child(2) {
+    left: 40%;
+    top: 50%;
+}
+
+.star:nth-child(3) {
+    left: 70%;
+    top: 80%;
+}
+
+.star:nth-child(4) {
+    left: 90%;
+    top: 30%;
+}
+
+.star:nth-child(5) {
+    left: 80%;
+    top: 60%;
+}
 
 /* Pour les petits écrans (mobiles) */
 @media (max-width: 768px) {
@@ -379,9 +405,10 @@ button:hover {
     }
 
     header {
-        padding: 30px 15px;
-        margin-top: 20px;
+        text-align: center;
+        margin-top: 20%;
     }
+    
 
     footer {
         font-size: 0.9rem;
@@ -428,8 +455,11 @@ button:hover {
 
     /* Adapter l'animation des étoiles filantes pour les petits écrans */
     .floating-shape {
-        width: 3px;
-        height: 3px;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0.1);
+        animation: floatingShapes 10s ease-in-out infinite;
     }
 
     /* Adapter les orbes flottantes */
@@ -447,30 +477,24 @@ button:hover {
 
 body.teleport-in {
     opacity: 0;
+    transform: scale(0.95);
     animation: teleportIn 1s forwards;
 }
 
 body.teleport-out {
     opacity: 1;
+    transform: scale(1);
     animation: teleportOut 1s forwards;
 }
 
 @keyframes teleportIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes teleportOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.95); }
 }
 
 @keyframes floating {
