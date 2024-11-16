@@ -79,12 +79,12 @@ h1 {
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 .menu-box {
-    width: 20%;
-    min-width: 300px;
+    width: 30%;
+    min-width: 250px;
     max-width: 350px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
