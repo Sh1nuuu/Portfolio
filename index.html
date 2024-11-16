@@ -3,12 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Header</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="animated-background"></div>
-    <h1 id="dynamicText">Mon Portfolio</h1> <br>
+    <h1 id="dynamicText">Mon Portfolio</h1>
+    <p id="subText">Connecter le futur, un capteur à la fois.</p> <!-- Phrase sous le titre -->
+    
+    <div class="container">
+        <section class="intro">
+            <h2>Bienvenue dans l'avenir des réseaux et de l'IoT</h2>
+            <p>Explorez l'innovation technologique au cœur de l'Internet des Objets et des réseaux de demain.</p>
+        </section>
+
+        <section class="skills">
+            <h2>Compétences</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>Réseaux</h3>
+                    <p>Maîtrise des technologies réseau (Wi-Fi, 5G, Ethernet, etc.)</p>
+                </div>
+                <div class="skill-item">
+                    <h3>IoT</h3>
+                    <p>Capteurs intelligents, automatisation, gestion des objets connectés.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Sécurité</h3>
+                    <p>Protection des données, cryptographie et gestion des accès.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>Projets récents</h2>
+            <div class="project-item">
+                <img src="project1.jpg" alt="Projet 1">
+                <h3>Projet IoT - Système de surveillance</h3>
+                <p>Description de ton projet IoT ici.</p>
+            </div>
+            <div class="project-item">
+                <img src="project2.jpg" alt="Projet 2">
+                <h3>Réseau 5G - Déploiement</h3>
+                <p>Description de ton projet réseau ici.</p>
+            </div>
+        </section>
+
+        <section class="certifications">
+            <h2>Certifications</h2>
+            <div class="certification-item">
+                <img src="certification1.jpg" alt="Certification 1">
+                <p>Certification en gestion des réseaux et sécurité IoT</p>
+            </div>
+            <div class="certification-item">
+                <img src="certification2.jpg" alt="Certification 2">
+                <p>Certification en déploiement de systèmes IoT à grande échelle</p>
+            </div>
+        </section>
+        
+        <section class="contact">
+            <h2>Contactez-moi</h2>
+            <p>Discutons de l'avenir des technologies !</p>
+            <button onclick="window.location.href='mailto:tonemail@example.com'">Envoyer un message</button>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Mon Portfolio. Tous droits réservés.</p>
+    </footer>
 
     <script>
         const text = "Connecter le futur, un capteur à la fois.";
@@ -22,68 +85,5 @@
         }
         window.onload = typeWriter;
     </script>
-
-<div class="container">
-    <section class="intro">
-        <h2>Bienvenue dans l'avenir des réseaux et de l'IoT</h2>
-        <p>Explorez l'innovation technologique au cœur de l'Internet des Objets et des réseaux de demain.</p>
-    </section>
-
-    <section class="skills">
-        <h2>Compétences</h2>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <h3>Réseaux</h3>
-                <p>Maîtrise des technologies réseau (Wi-Fi, 5G, Ethernet, etc.)</p>
-            </div>
-            <div class="skill-item">
-                <h3>IoT</h3>
-                <p>Capteurs intelligents, automatisation, gestion des objets connectés.</p>
-            </div>
-            <div class="skill-item">
-                <h3>Sécurité</h3>
-                <p>Protection des données, cryptographie et gestion des accès.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="projects">
-        <h2>Projets récents</h2>
-        <div class="project-item">
-            <img src="project1.jpg" alt="Projet 1">
-            <h3>Projet IoT - Système de surveillance</h3>
-            <p>Description de ton projet IoT ici.</p>
-        </div>
-        <div class="project-item">
-            <img src="project2.jpg" alt="Projet 2">
-            <h3>Réseau 5G - Déploiement</h3>
-            <p>Description de ton projet réseau ici.</p>
-        </div>
-    </section>
-
-    <section class="contact">
-        <h2>Contactez-moi</h2>
-        <p>Discutons de l'avenir des technologies !</p>
-        <button onclick="window.location.href='mailto:tonemail@example.com'">Envoyer un message</button>
-    </section>
-</div>
-
-<section class="certifications">
-    <h2>Certifications</h2>
-    <div class="certification-item">
-        <img src="certification1.jpg" alt="Certification 1">
-        <p>Certification en gestion des réseaux et sécurité IoT</p>
-    </div>
-    <div class="certification-item">
-        <img src="certification2.jpg" alt="Certification 2">
-        <p>Certification en déploiement de systèmes IoT à grande échelle</p>
-    </div>
-</section>
-
-<footer>
-    <p>© 2024 Mon Portfolio. Tous droits réservés.</p>
-</footer>
-</div>
-
 </body>
 </html>
