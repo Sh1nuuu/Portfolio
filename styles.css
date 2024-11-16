@@ -147,16 +147,18 @@ h1 {
     left: 50%;
 }
 
+/* Animation d'agrandissement au clic */
 .box-click {
-    animation: scaleUp 0.5s forwards;
+    animation: scaleUp 0.8s forwards;
 }
 
 @keyframes scaleUp {
     0% {
         transform: scale(1);
+        opacity: 1;
     }
     100% {
-        transform: scale(1.2);
+        transform: scale(10);  /* La boîte s'agrandit pour couvrir l'écran */
         opacity: 0;
     }
 }
