@@ -363,3 +363,72 @@ button:hover {
 .star:nth-child(3) { top: 60%; left: 80%; }
 .star:nth-child(4) { top: 85%; left: 35%; }
 .star:nth-child(5) { top: 0%; left: 25%; }
+
+/* Pour les petits écrans (mobiles) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Réduire la taille de la police */
+        padding: 10px;
+    }
+
+    header {
+        padding: 30px 15px;
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Réduire la taille du titre */
+    }
+
+    #subText {
+        font-size: 1.4rem; /* Réduire la taille du sous-texte */
+        font-weight: 300;
+    }
+
+    .container {
+        width: 90%; /* Laisser plus d'espace sur les petits écrans */
+        margin-top: 20px;
+    }
+
+    .first {
+        flex-direction: column; /* Empiler les éléments verticalement */
+        align-items: center;
+    }
+
+    .menu-box {
+        width: 90%; /* Utiliser toute la largeur disponible */
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .box h3 {
+        font-size: 1.3rem;
+    }
+
+    .project, .certification {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 1rem; /* Réduire la taille du bouton */
+        padding: 8px 15px;
+    }
+
+    /* Adapter l'animation des étoiles filantes pour les petits écrans */
+    .floating-shape {
+        width: 3px;
+        height: 3px;
+    }
+
+    /* Adapter les orbes flottantes */
+    .floating-orb {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Réduire la taille des étoiles */
+    .star {
+        width: 1px;
+        height: 1px;
+    }
+}
