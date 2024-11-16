@@ -170,18 +170,18 @@ h1 {
     }
     50% {
         opacity: 0;
-        transform: scale(1.2) translateX(100vw); /* Déplace le contenu vers la droite (100% de la largeur de la fenêtre) */
+        transform: scale(1.2) translateX(100vw);
     }
     100% {
         opacity: 0;
-        transform: scale(1.5) translateX(200vw); /* Continue de déplacer le contenu hors de la vue */
+        transform: scale(1.5) translateX(200vw);
     }
 }
 
 @keyframes teleportIn {
     0% {
         opacity: 0;
-        transform: scale(1.5) translateX(-200vw); /* Déplace le contenu de l'autre côté (hors écran) */
+        transform: scale(1.5) translateX(-200vw);
     }
     50% {
         opacity: 0.5;
@@ -207,7 +207,7 @@ h1 {
     margin-top: 40px;
 }
 
-.project, .certification {
+.projets, .certifications {
     background-color: #333;
     padding: 20px;
     margin-bottom: 20px;
@@ -215,12 +215,12 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.project h3, .certification h3 {
+.projets h3, .certifications h3 {
     color: #00ccff;
     margin-bottom: 10px;
 }
 
-.project p, .certification p {
+.projets p, .certifications p {
     color: #ccc;
     font-size: 1.1rem;
 }
@@ -454,7 +454,7 @@ button:hover {
         font-size: 1.3rem;
     }
 
-    .project, .certification {
+    .projets, .certifications {
         padding: 15px;
     }
 
