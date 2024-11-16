@@ -9,24 +9,23 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    background-color: #1b1b1b;
+    color: #fff;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     align-items: center;
     justify-content: flex-start;
-    background: linear-gradient(135deg, #1e0033, #5f008b);
-    color: #31002750;
-    position: relative;
+    min-height: 100vh;
 }
+
 .animated-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgb(238, 0, 247), rgb(0, 0, 0));
-    animation: movingBackground 6s linear infinite;
+    background: linear-gradient(45deg, rgba(0, 204, 255, 0.3), rgba(255, 0, 255, 0.3));
+    animation: movingBackground 5s linear infinite;
     z-index: -1;
 }
 
@@ -35,14 +34,13 @@ body {
     100% { background-position: 100% 100%; }
 }
 
-/* Header */
 header {
     text-align: center;
     background: rgba(0, 0, 0, 0.7);
     padding: 60px 20px;
-    border-radius: 20px;
-    margin-top: 30px;
-    box-shadow: 1px 4px 20px rgba(0, 204, 255, 0.3);
+    border-radius: 15px;
+    margin-top: 50px;
+    box-shadow: 0 4px 20px rgba(0, 204, 255, 0.3);
     position: relative;
     z-index: 2;
 }
@@ -71,11 +69,17 @@ h1 {
     100% { opacity: 1; }
 }
 
+#subText {
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: 400;
+}
+
 /* Conteneur principal */
 .container {
     width: 60%;
     text-align: center;
-    margin-top: 300px;
+    margin-top: 30px;
 }
 
 /* Menu de navigation */
@@ -89,69 +93,75 @@ h1 {
 
 .menu-box {
     width: 30%;
-    min-width: 250px;
-    max-width: 350px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
 }
 
-.menu-box a {
+.box {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;  
+    color: white;  
     display: block;
-    background-color: #33333342;
-    padding: 30px;
-    border-radius: 15px;
-    text-decoration: none;
-    color: white;
-    box-shadow: 0 4px 8px rgb(0, 204, 255, 0.3);
+    height: 200px;  
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.menu-box a:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: rgba(223, 19, 172, 0.11);
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 0.4s ease;
-}
-
-.menu-box a:hover:before {
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.menu-box a:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(197, 13, 197, 0.178);
-}
-
-.menu-box h3 {
-    font-size: 1.8rem;
+.box h3 {
     color: #00ccff;
+    font-size: 1.6rem;
     margin-bottom: 10px;
 }
 
-.menu-box p {
-    font-size: 1rem;
-    color: #ccc;
+.box p {
+    font-size: 1.1rem;
+    color: #fff;
 }
 
-/* Effet de clic sur les boxes */
+.box:hover {
+    transform: scale(1.05);
+    background-color: #444;
+    box-shadow: 0 8px 16px rgba(0, 204, 255, 0.5);
+}
+
+.box:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(0, 204, 255, 0.3);
+    transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
+    border-radius: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
+.box:hover:before {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+}
+
+/* Animation d'agrandissement au clic */
 .box-click {
-    animation: expand 0.8s forwards;
+    animation: scaleUp 0.8s forwards;
 }
 
-@keyframes expand {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.2); opacity: 0.7; }
-    100% { transform: scale(1); opacity: 0; }
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(10);  /* La boîte s'agrandit pour couvrir l'écran */
+        opacity: 0;
+    }
 }
-
 /* Section des projets et certifications */
 .projets-content, .certifications-content {
     margin-top: 40px;
