@@ -1,49 +1,189 @@
-/* Variables CSS pour une gestion plus facile */
-:root {
-    --primary-color: #ff6600; /* Orange */
-    --secondary-color: #f8a500; /* Orange clair */
-    --background-color: #1a1a1a;
-    --text-color: #fff;
-    --footer-bg: #222;
-    --header-bg: rgba(0, 0, 0, 0.7);
-    --font-family: 'Arial', sans-serif;
-    --box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
-}
-
-/* Global Reset */
+/* Style de base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: var(--font-family);
-    background-color: var(--background-color);
-    color: var(--text-color);
-    overflow: hidden; /* Pour éviter les scrolls intempestifs */
+/* Définition des couleurs */
+:root {
+    --primary-color: #ff6600; /* Orange */
+    --secondary-color: #f8a500; /* Orange clair */
+    --background-color: #1a1a1a; /* Gris foncé */
+    --text-color: #fff; /* Blanc */
 }
 
-/* En-tête */
+/* Corps de la page */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Animation de fond */
+.animated-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+    animation: animatedBackground 10s linear infinite;
+}
+
+@keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Effet des orbes flottants */
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 204, 0, 0.3);
+    width: 80px;
+    height: 80px;
+    animation: floatOrbs 10s ease-in-out infinite;
+}
+
+.floating-orb:nth-child(1) {
+    left: 30%;
+}
+
+.floating-orb:nth-child(2) {
+    left: 60%;
+}
+
+.floating-orb:nth-child(3) {
+    left: 80%;
+}
+
+@keyframes floatOrbs {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+}
+
+/* Effet des étoiles */
+.star {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    animation: floatStars 10s linear infinite;
+}
+
+@keyframes floatStars {
+    0% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+}
+
+/* Effet des formes flottantes */
+.floating-shape {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 204, 0, 0.2);
+    animation: floatShapes 10s ease-in-out infinite;
+}
+
+.floating-shape-1 {
+    top: 10%;
+    left: 50%;
+}
+
+.floating-shape-2 {
+    top: 30%;
+    left: 30%;
+}
+
+.floating-shape-3 {
+    top: 50%;
+    left: 70%;
+}
+
+@keyframes floatShapes {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+/* Header */
 header {
     text-align: center;
-    background: var(--header-bg);
+    background: rgba(0, 0, 0, 0.7);
     padding: 60px 20px;
     border-radius: 15px;
     margin-top: 50px;
     box-shadow: 1 4px 20px rgba(255, 102, 0, 0.3);
+    position: relative;
+    z-index: 2;
 }
 
-h1 {
-    font-size: 3.5rem;
+/* Animation du titre */
+#dynamicText {
+    font-size: 4rem;
     color: var(--primary-color);
-    letter-spacing: 3px;
-    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 0; /* Cache initialement le texte */
+    animation: typing 4s steps(40) forwards, blink 0.75s step-end infinite;
+    transform: perspective(800px) rotateY(0deg);
+    text-align: center;
 }
 
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+#dynamicText:hover {
+    animation: typing 2s steps(40) forwards, bounce 1s ease-in-out infinite;
+    transform: perspective(800px) rotateY(15deg);
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Animation du sous-titre */
 #subText {
     font-size: 1.8rem;
     color: var(--secondary-color);
@@ -51,74 +191,83 @@ h1 {
     margin-top: 10px;
     font-style: italic;
     font-weight: 400;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Container principal */
+/* Section du contenu */
 .container {
     padding: 20px;
     flex-grow: 1;
 }
 
-/* Menu */
+/* Menu principal */
 .first {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 20px;
-    margin-top: 50px;
+    align-items: stretch;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-/* Menu box avec transition */
 .menu-box {
     background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1 1 250px;
-    max-width: 300px;
+    margin: 10px 0;
+    transition: transform 0.3s ease;
     position: relative;
-    box-shadow: var(--box-shadow);
+    flex: 1 1 150px;
+    max-width: 200px;
 }
 
 .menu-box:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(255, 102, 0, 0.4);
-}
-
-.menu-box .clickable-zone {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0);
-    border-radius: 10px;
-    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .box h3 {
     color: var(--secondary-color);
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 600;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
 }
 
 .box p {
     font-size: 1.1rem;
-    color: var(--text-color);
-    line-height: 1.6;
+    color: #fff;
+}
+
+/* Section des projets et certifications */
+.projets-content, .certifications-content {
+    margin-top: 40px;
+}
+
+.projets, .certifications {
+    background-color: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.projets h3, .certifications h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.projets p, .certifications p {
+    color: #ccc;
+    font-size: 1.1rem;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: var(--footer-bg);
+    background-color: #222;
+    position: relative;
     width: 100%;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
 
 footer p {
@@ -140,72 +289,39 @@ footer p {
     background-color: #ff4c00;
 }
 
-/* Animation d'arrière-plan */
-.animated-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #ff6600, #f8a500);
-    background-size: 200% 200%;
-    animation: backgroundAnimation 5s infinite alternate;
+/* Réglage responsive */
+@media (max-width: 768px) {
+    #dynamicText {
+        font-size: 2.5rem;
+    }
+    #subText {
+        font-size: 1.5rem;
+    }
+    .menu-box {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }
 
-@keyframes backgroundAnimation {
-    0% { background-position: 100% 0; }
-    100% { background-position: 0 100%; }
+/* Transition de page */
+body.teleport-in {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: teleportIn 1s forwards;
 }
 
-/* Animation des orbes flottants */
-.floating-orb {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 204, 0, 0.3);
-    width: 80px;
-    height: 80px;
-    animation: orbMovement 5s ease-in-out infinite;
+body.teleport-out {
+    opacity: 1;
+    transform: scale(1);
+    animation: teleportOut 1s forwards;
 }
 
-.floating-orb:nth-child(1) {
-    top: 10%;
-    left: 15%;
-    animation-delay: 0.5s;
+@keyframes teleportIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
-.floating-orb:nth-child(2) {
-    top: 30%;
-    left: 40%;
-    animation-delay: 1s;
-}
-
-.floating-orb:nth-child(3) {
-    top: 60%;
-    left: 70%;
-    animation-delay: 1.5s;
-}
-
-@keyframes orbMovement {
-    0% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-30px) scale(1.2); }
-    100% { transform: translateY(0) scale(1); }
-}
-
-/* Animations d'entrée */
-.teleport-in {
-    animation: fadeIn 1s ease-in-out;
-}
-
-.teleport-out {
-    animation: fadeOut 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
+@keyframes teleportOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.95); }
 }
