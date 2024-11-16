@@ -18,19 +18,19 @@
     <div class="container">
         <section class="first">
             <div class="menu-box">
-                <a href="cv.html" class="box" id="cv">
+                <a href="cv.html" class="box" id="cv" onclick="handleClick(event, 'cv.html')">
                     <h3>Mon CV</h3>
                     <p>Découvrez mon parcours professionnel et mes expériences.</p>
                 </a>
             </div>
             <div class="menu-box">
-                <a href="projets.html" class="box" id="projects">
+                <a href="projets.html" class="box" id="projects" onclick="handleClick(event, 'projets.html')">
                     <h3>Mes Projets</h3>
                     <p>Explorez mes projets liés aux technologies IoT et réseaux.</p>
                 </a>
             </div>
             <div class="menu-box">
-                <a href="certifications.html" class="box" id="certification">
+                <a href="certifications.html" class="box" id="certification" onclick="handleClick(event, 'certifications.html')">
                     <h3>Certification</h3>
                     <p>Consultez mes certifications en réseaux et IoT.</p>
                 </a>
@@ -49,7 +49,7 @@
     </footer>
 
     <script>
-        const text = "ienvenue sur mon Portfolio de Présentation.";
+        const text = "Bienvenue sur mon Portfolio de Présentation.";
         let index = 0;
         function typeWriter() {
             if (index < text.length) {
@@ -61,6 +61,15 @@
         window.onload = function() {
             typeWriter();
         };
+
+        function handleClick(event, page) {
+            event.preventDefault();  // Empêche la navigation immédiate
+            let box = event.currentTarget;
+            box.classList.add('box-click');  // Ajoute une classe pour l'animation
+            setTimeout(function() {
+                window.location.href = page;  // Navigue vers la page après l'animation
+            }, 500);  // Délai de 500ms pour que l'animation soit visible
+        }
     </script>
 </body>
 </html>

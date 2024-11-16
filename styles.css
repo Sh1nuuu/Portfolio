@@ -100,11 +100,13 @@ h1 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    text-decoration: none;  /* Enlever le soulignement */
-    color: white;  /* Couleur du texte */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;  
+    color: white;  
     display: block;
-    height: 200px;  /* Hauteur pour donner un bon effet */
+    height: 200px;  
+    position: relative;
+    overflow: hidden;
 }
 
 .box h3 {
@@ -120,7 +122,43 @@ h1 {
 
 .box:hover {
     transform: scale(1.05);
-    background-color: #444; /* Change le fond lors du survol */
+    background-color: #444;
+    box-shadow: 0 8px 16px rgba(0, 204, 255, 0.5);
+}
+
+.box:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(0, 204, 255, 0.3);
+    transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
+    border-radius: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
+.box:hover:before {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+}
+
+.box-click {
+    animation: scaleUp 0.5s forwards;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
 }
 
 button {
@@ -143,19 +181,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px;
-    font-size: 1rem;
     position: fixed;
     width: 100%;
     bottom: 0;
-    left: 0;
-}
-
-footer p {
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-    .box {
-        width: 100%;  /* Réduit la largeur à 100% sur les petits écrans */
-    }
 }
