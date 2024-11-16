@@ -64,25 +64,25 @@
             if (index < text.length) {
                 document.getElementById("dynamicText").innerHTML += text.charAt(index);
                 index++;
-                setTimeout(typeWriter, 100); // Ajout d'un délai plus long pour mieux voir l'animation
+                setTimeout(typeWriter, 100); 
             }
         }
 
         window.onload = function () {
             typeWriter();
-            document.body.classList.add('teleport-in'); // Appliquer l'effet de téléportation à l'arrivée sur la page
+            document.body.classList.add('teleport-in'); 
         };
 
         function changePage(url) {
-            document.body.classList.add('teleport-out'); // Appliquer l'effet de téléportation au départ
+            document.body.classList.add('teleport-out'); 
             setTimeout(function () {
-                window.location.href = url; // Rediriger vers la page après l'animation
+                window.location.href = url; 
             },      
-            1000); // Délai pour laisser le temps à l'animation de se terminer
+            1000); 
         }
 
         window.addEventListener('load', function () {
-        document.body.classList.add('teleport-in'); // Appliquer l'animation lors du chargement
+        document.body.classList.add('teleport-in'); 
         });
 
     </script>
