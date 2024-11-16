@@ -231,7 +231,7 @@ button:hover {
     position: absolute;
     border-radius: 50%;
     background-color: rgba(255, 0, 0, 0.3);
-    animation: floatingShapes 5s ease-in-out infinite;
+    animation: floatingShapes 10s ease-in-out infinite;
     opacity: 0.5;
 }
 
