@@ -83,8 +83,8 @@ h1 {
 }
 
 .menu-box {
-    width: 30%;
-    min-width: 20px;
+    width: 90%;
+    min-width: 200px;
     max-width: 250px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
