@@ -289,7 +289,7 @@ button:hover {
     height: 2px;
     background: white;
     border-radius: 50%;
-    box-shadow: 0 0 5px white;
+    box-shadow: 0 0 5px rgb(228, 184, 184);
     animation: twinkle 3s infinite alternate;
 }
 
