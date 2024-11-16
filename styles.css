@@ -74,7 +74,7 @@ h1 {
     width: 80%;
 }
 
-.first h2, .cv h2, .projects h2, .contact h2, .certifications h2 {
+.first h2, .contact h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #00ccff;
@@ -91,14 +91,20 @@ h1 {
     justify-content: center;
 }
 
+.menu-box {
+    width: 30%;
+}
+
 .box {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
-    width: 30%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
-    margin-bottom: 20px;
+    text-decoration: none;  /* Enlever la décoration de lien */
+    color: white;  /* Couleur du texte */
+    display: block;
+    height: 200px;  /* Hauteur pour donner un bon effet */
 }
 
 .box h3 {
@@ -114,12 +120,7 @@ h1 {
 
 .box:hover {
     transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-    .box {
-        width: 100%;  /* Réduit la largeur à 100% sur les petits écrans */
-    }
+    background-color: #444; /* Change le fond lors du survol */
 }
 
 button {
@@ -151,4 +152,10 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+@media (max-width: 768px) {
+    .box {
+        width: 100%;  /* Réduit la largeur à 100% sur les petits écrans */
+    }
 }

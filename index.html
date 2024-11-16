@@ -12,30 +12,36 @@
 
     <header>
         <h1 id="dynamicText">B</h1>
-        <p id="subText">Explorez les sections pour en découvrir plus.</p>
+        <p id="subText">Connecter le futur, un capteur à la fois.</p>
     </header>
-    
+
     <div class="container">
         <section class="first">
             <h2>Menu</h2>
-            <div class="box" id="cv">
-                <h3>Mon CV</h3>
-                <p>Découvrez mon parcours professionnel et mes expériences.</p>
+            <div class="menu-box">
+                <a href="cv.html" class="box" id="cv">
+                    <h3>Mon CV</h3>
+                    <p>Découvrez mon parcours professionnel et mes expériences.</p>
+                </a>
             </div>
-            <div class="box" id="projects">
-                <h3>Mes Projets</h3>
-                <p>Explorez mes projets liés aux technologies IoT et réseaux.</p>
+            <div class="menu-box">
+                <a href="projects.html" class="box" id="projects">
+                    <h3>Mes Projets</h3>
+                    <p>Explorez mes projets liés aux technologies IoT et réseaux.</p>
+                </a>
             </div>
-            <div class="box" id="certification">
-                <h3>Certification</h3>
-                <p>Consultez mes certifications en réseaux et IoT.</p>
+            <div class="menu-box">
+                <a href="certifications.html" class="box" id="certification">
+                    <h3>Certification</h3>
+                    <p>Consultez mes certifications en réseaux et IoT.</p>
+                </a>
             </div>
         </section>
 
         <section class="contact">
             <h2>Contactez-moi</h2>
             <p>Discutons de l'avenir des technologies !</p>
-            <button onclick="window.location.href='mailto:theo.marchand0914@gmail.com'">Envoyer un message</button>
+            <button onclick="window.location.href='mailto:tonemail@example.com'">Envoyer un message</button>
         </section>
     </div>
 
@@ -50,7 +56,7 @@
             if (index < text.length) {
                 document.getElementById("dynamicText").innerHTML += text.charAt(index);
                 index++;
-                setTimeout(typeWriter, 50);
+                setTimeout(typeWriter, 100);
             }
         }
         window.onload = function() {
