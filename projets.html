@@ -15,20 +15,26 @@
         <p>Découvrez mes projets réalisés dans les domaines des réseaux et IoT.</p>
     </header>
 
-    <div class="container">
-        <section class="projets-content">
-            <h2>Projets en IoT</h2>
-            <div class="project">
-                <h3>Projet IoT : Gestion de Capteurs dans un Hôpital</h3>
-                <p>Développement d'un système IoT pour collecter et analyser des données provenant de capteurs dans un environnement hospitalier...</p>
-            </div>
-            <div class="project">
-                <h3>Projet IoT : Monitoring de Température</h3>
-                <p>Conception d'un système de monitoring de température en temps réel avec des capteurs connectés à une base de données MariaDB...</p>
-            </div>
-        </section>
-    </div>
-
+    <section class="first">
+        <div class="menu-box">
+            <a href="index.html" class="box" id="index" onclick="handleClick(event, 'cv.html')">
+                <h3>Acceuil</h3>
+                <p>Reviens au début.</p>
+            </a>
+        </div>
+        <div class="menu-box">
+            <a href="cv.html" class="box" id="cv" onclick="handleClick(event, 'projets.html')">
+                <h3>Mon CV</h3>
+                <p>Découvrez mon parcours professionnel et mes expériences.</p>
+            </a>
+        </div>
+        <div class="menu-box">
+            <a href="certifications.html" class="box" id="certification" onclick="handleClick(event, 'certifications.html')">
+                <h3>Certification</h3>
+                <p>Consultez mes certifications en réseaux et IoT.</p>
+            </a>
+        </div>
+    </section>
     <footer>
         <p>© 2024 Mon Portfolio. Tous droits réservés.</p>
     </footer>
