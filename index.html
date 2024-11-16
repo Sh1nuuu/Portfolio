@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio Header</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Mon Portfolio</h1>
+    <div class="animated-background"></div>
+    <h1 id="dynamicText"></h1>
+
+    <script>
+        const text = "Connecter le futur, un capteur à la fois.";
+        let index = 0;
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("dynamicText").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        window.onload = typeWriter;
+    </script>
 </body>
 </html>
