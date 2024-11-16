@@ -96,22 +96,16 @@ h1 {
 }
 
 .menu-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
+    display: block;
     background-color: #333;
-    padding: 20px;
-    margin: 10px;
+    padding: 30px;
     border-radius: 15px;
     text-decoration: none;
     color: white;
     box-shadow: 0 4px 8px rgba(70, 1, 66, 0.363);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    flex: 1 1 200px; 
-    height: 250px; 
-    max-width: 300px; 
-    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: none; 
 }
 
 /* Sur un grand écran, les boîtes occuperont l'espace disponible */
@@ -152,11 +146,9 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
-.box:hover:before {
-    width: 0;
-    height: 0;
-    top: 50%;
-    left: 50%;
+.menu-box:hover {
+    transform: none; 
+    background: none; 
 }
 
 
