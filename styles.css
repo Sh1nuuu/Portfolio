@@ -97,10 +97,6 @@ h1 {
 }
 
 .menu-box {
-    width: 30%;
-}
-
-.box {
     margin: 20px;
     background: rgba(39, 38, 38, 0.74);
     border: 2px solid #0a0000a1;
