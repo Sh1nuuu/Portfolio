@@ -85,6 +85,10 @@ h1 {
     padding: 20px;
     background-color: #222;
     border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;  /* Permet de faire passer les items à la ligne si nécessaire */
+    gap: 20px;  /* Espace entre les éléments */
+    justify-content: center;  /* Centrer les éléments */
 }
 
 .first-item {
@@ -93,12 +97,13 @@ h1 {
     border-radius: 10px;
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 30%;  /* Largeur de chaque élément */
+    transition: transform 0.3s ease;
 }
 
 .first-item:hover {
     transform: scale(1.05);
 }
-
 
 button {
     background-color: #00ccff;
