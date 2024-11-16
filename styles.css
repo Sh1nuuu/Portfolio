@@ -89,24 +89,36 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
+    align-items: stretch; 
     width: 100%;
-    height: 100%;
     padding: 20px;
     box-sizing: border-box;
 }
 
 .menu-box {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
     background-color: #333;
-    padding: 30px;
+    padding: 20px;
+    margin: 10px;
     border-radius: 15px;
     text-decoration: none;
     color: white;
     box-shadow: 0 4px 8px rgba(70, 1, 66, 0.363);
-    position: relative;
-    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 200px; 
+    height: 250px; 
+    max-width: 300px; 
+    margin-bottom: 20px;
+}
+
+/* Sur un grand écran, les boîtes occuperont l'espace disponible */
+@media (min-width: 768px) {
+    .menu-box {
+        flex: 1 1 200px; 
+    }
 }
 
 .box h3 {
@@ -366,7 +378,7 @@ button:hover {
 /* Pour les petits écrans (mobiles) */
 @media (max-width: 768px) {
     body {
-        font-size: 14px; /* Réduire la taille de la police */
+        font-size: 14px;
         padding: 10px;
     }
 
@@ -381,28 +393,28 @@ button:hover {
     }
 
     h1 {
-        font-size: 2.5rem; /* Réduire la taille du titre */
+        font-size: 2.5rem; 
     }
 
     #subText {
-        font-size: 1.4rem; /* Réduire la taille du sous-texte */
+        font-size: 1.4rem; 
         font-weight: 300;
     }
 
     .container {
-        width: 90%; /* Laisser plus d'espace sur les petits écrans */
+        width: 90%; 
         margin-top: 20px;
     }
 
     .first {
-        flex-direction: column; /* Empiler les éléments verticalement */
-        align-items: center;
+        flex-direction: column;
+        align-items: center; 
     }
 
     .menu-box {
-        width: 90%; /* Utiliser toute la largeur disponible */
-        padding: 20px;
-        margin-bottom: 20px;
+        flex: 1 1 100%;
+        margin: 10px 0; 
+        height: auto;
     }
 
     .box h3 {
@@ -414,7 +426,7 @@ button:hover {
     }
 
     button {
-        font-size: 1rem; /* Réduire la taille du bouton */
+        font-size: 1rem; 
         padding: 8px 15px;
     }
 
