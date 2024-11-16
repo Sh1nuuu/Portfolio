@@ -74,20 +74,20 @@ h1 {
     width: 80%;
 }
 
-.menu h2, .cv h2, .projects h2, .contact h2, .certifications h2 {
+.first h2, .cv h2, .projects h2, .contact h2, .certifications h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #00ccff;
 }
 
-.menu {
+.first {
     margin: 50px 0;
     padding: 30px;
     background-color: #222;
     border-radius: 10px;
 }
 
-.menu-item {
+.first-item {
     margin: 20px;
     padding: 20px;
     background-color: #333;
@@ -95,7 +95,7 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-.menu-item:hover {
+.first-item:hover {
     transform: scale(1.05);
 }
 
