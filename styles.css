@@ -154,18 +154,16 @@ h1 {
     animation: scaleUp 0.8s forwards;
 }
 
-@media (max-width: 768px) {
-    .menu-item {
-        flex: 1 1 calc(50% - 40px); /* Adjust for 2 items per row */
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(10);  /* La boîte s'agrandit pour couvrir l'écran */
+        opacity: 0;
     }
 }
-
-@media (max-width: 480px) {
-    .menu-item {
-        flex: 1 1 calc(100% - 40px); /* Adjust for 1 item per row */
-    }
-}
-
 /* Section des projets et certifications */
 .projets-content, .certifications-content {
     margin-top: 40px;
