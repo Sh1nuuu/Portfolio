@@ -99,55 +99,6 @@ h1 {
     transform: scale(1.05);
 }
 
-.projects {
-    margin: 50px 0;
-    padding: 20px;
-    background-color: #222;
-    border-radius: 10px;
-}
-
-.project-item {
-    margin: 20px 0;
-}
-
-.project-item img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
-}
-
-.project-item:hover img {
-    transform: scale(1.05);
-}
-
-.certifications {
-    margin: 50px 0;
-    padding: 20px;
-    background-color: #222;
-    border-radius: 10px;
-}
-
-.certification-item {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.certification-item img {
-    width: 100%;
-    max-width: 200px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
-}
-
-.certification-item img:hover {
-    transform: scale(1.05);
-}
 
 button {
     background-color: #00ccff;
