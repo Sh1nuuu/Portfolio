@@ -16,10 +16,7 @@ body {
     z-index: -1;
 }
 
-@keyframes moveBackground {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 100% 100%; }
-}
+
 
 h1 {
     text-align: center;
@@ -28,7 +25,4 @@ h1 {
     animation: glow 1.5s infinite alternate;
 }
 
-@keyframes glow {
-    from { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; }
-    to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc; }
-}
+
