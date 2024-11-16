@@ -16,23 +16,26 @@
     </header>
 
     <div class="container">
-        <section class="cv-content">
-            <h2>Parcours Professionnel</h2>
-            <p>Je suis un ingénieur passionné par les technologies IoT, réseaux et télécommunications...</p>
-            <h3>Compétences</h3>
-            <ul>
-                <li>Développement IoT (ESP8266, ESP32)</li>
-                <li>Réseaux et télécommunications</li>
-                <li>Gestion de base de données (MariaDB, SQL)</li>
-                <li>Développement web (HTML, CSS, JavaScript)</li>
-            </ul>
-            <h3>Expériences</h3>
-            <ul>
-                <li>2020-2024 : Ingénieur IoT, Entreprise X</li>
-                <li>2018-2020 : Technicien Réseaux, Entreprise Y</li>
-            </ul>
+        <section class="first">
+            <div class="menu-box">
+                <a href="cv.html" class="box" id="cv" onclick="handleClick(event, 'cv.html')">
+                    <h3>Mon CV</h3>
+                    <p>Découvrez mon parcours professionnel et mes expériences.</p>
+                </a>
+            </div>
+            <div class="menu-box">
+                <a href="projets.html" class="box" id="projet" onclick="handleClick(event, 'projets.html')">
+                    <h3>Mes Projets</h3>
+                    <p>Explorez mes projets liés aux technologies IoT et réseaux.</p>
+                </a>
+            </div>
+            <div class="menu-box">
+                <a href="certifications.html" class="box" id="certification" onclick="handleClick(event, 'certifications.html')">
+                    <h3>Certification</h3>
+                    <p>Consultez mes certifications en réseaux et IoT.</p>
+                </a>
+            </div>
         </section>
-    </div>
 
     <footer>
         <p>© 2024 Mon Portfolio. Tous droits réservés.</p>
