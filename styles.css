@@ -235,21 +235,21 @@ button:hover {
 .floating-shape-1 {
     top: 20%;
     left: -50%;
-    animation-duration: 10s;
+    animation-duration: 3s;
     animation-delay: 1s;
 }
 
 .floating-shape-2 {
     top: 50%;
     left: -50%;
-    animation-duration: 5s;
+    animation-duration: 4s;
     animation-delay: 2s;
 }
 
 .floating-shape-3 {
     top: 80%;
     left: -50%;
-    animation-duration: 15s;
+    animation-duration: 2s;
     animation-delay: 3s;
 }
 
