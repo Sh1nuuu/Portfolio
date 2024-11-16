@@ -237,7 +237,7 @@ button:hover {
     position: absolute;
     width: 4px;
     height: 4px;
-    background-color: white;
+    background-color: rgb(145, 141, 141);
     border-radius: 50%;
     box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
     animation: shooting-star linear infinite;
