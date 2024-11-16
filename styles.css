@@ -452,26 +452,82 @@ button:hover {
         font-size: 1rem; 
         padding: 8px 15px;
     }
-
-    /* Adapter l'animation des étoiles filantes pour les petits écrans */
-    .floating-shape {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        background-color: rgba(255, 255, 255, 0.1);
-        animation: floatingShapes 10s ease-in-out infinite;
+}
+    /* Adaptation pour les appareils mobiles */
+@media only screen and (max-width: 768px) {
+    header {
+        margin-top: 10%;
     }
 
-    /* Adapter les orbes flottantes */
+    #dynamicText {
+        font-size: 2rem;
+    }
+
+    #subText {
+        font-size: 1rem;
+    }
+
+    .menu-box {
+        padding: 15px;
+        margin: 5px 0;
+    }
+
     .floating-orb {
-        width: 30px;
-        height: 30px;
+        width: 60px;
+        height: 60px;
     }
 
-    /* Réduire la taille des étoiles */
-    .star {
-        width: 1px;
-        height: 1px;
+    .floating-shape {
+        width: 80px;
+        height: 80px;
+    }
+
+    .contact button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
+
+/* Adaptation pour les très petits écrans (smartphones en mode portrait) */
+@media only screen and (max-width: 480px) {
+    header {
+        margin-top: 5%;
+    }
+
+    #dynamicText {
+        font-size: 1.5rem;
+    }
+
+    #subText {
+        font-size: 0.9rem;
+    }
+
+    .menu-box {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .floating-orb {
+        width: 50px;
+        height: 50px;
+    }
+
+    .floating-shape {
+        width: 60px;
+        height: 60px;
+    }
+
+    .contact button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    footer {
+        padding: 8px;
     }
 }
 
