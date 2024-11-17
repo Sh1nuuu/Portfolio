@@ -79,78 +79,6 @@ header {
     opacity: 0;
 }
 
-.carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1500px; /* Donne un effet de profondeur */
-    position: relative;
-    margin-top: 30px;
-}
-
-.project-card {
-    width: 250px;
-    height: 200px;
-    background-color: #444;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    transform-style: preserve-3d; /* Nécessaire pour la rotation 3D */
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-    margin: 0 20px;
-}
-
-.project-card:hover {
-    transform: rotateY(15deg) translateZ(40px); /* Rotation 3D */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-}
-
-.card-1 {
-    background-color: #3498db;
-}
-
-.card-2 {
-    background-color: #e74c3c;
-}
-
-.project-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.project-card p {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.carousel .project-card:nth-child(1) {
-    transform: rotateY(-30deg) translateZ(200px); /* Déplace la première carte en arrière */
-}
-
-.carousel .project-card:nth-child(2) {
-    transform: rotateY(0deg) translateZ(100px); /* La carte du milieu est la plus proche */
-}
-
-.carousel .project-card:nth-child(3) {
-    transform: rotateY(30deg) translateZ(200px); /* Déplace la dernière carte en arrière */
-}
-
-.project-card:hover {
-    transform: translateY(-20px) rotateY(15deg) translateZ(250px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* Hover effect to spread cards apart */
-.carousel .project-card:nth-child(1):hover {
-    transform: translateX(-30px) translateY(-30px);
-}
-
-.carousel .project-card:nth-child(2):hover {
-    transform: translateX(30px) translateY(-30px);
-}
-
 /* Animation de texte entrant */
 @keyframes slide-in {
     0% {
@@ -351,10 +279,6 @@ button:hover {
     .image-section {
         width: 50%;
     }
-
-    .carousel {
-        flex-direction: column;
-    }
 }
 
 @media (max-width: 768px) {
@@ -367,15 +291,6 @@ button:hover {
         width: 100%;
         position: relative;
         margin: 0;
-    }
-
-    .carousel {
-        flex-direction: column;
-    }
-
-    .project-card {
-        width: 100%;
-        height: auto;
     }
 }
 
@@ -394,14 +309,5 @@ button:hover {
 
     .project-card p {
         font-size: 0.9rem;
-    }
-
-    .carousel .project-card {
-        width: 80%;
-        height: auto;
-    }
-
-    .carousel {
-        flex-direction: column;
     }
 }
