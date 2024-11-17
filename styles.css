@@ -45,6 +45,23 @@ header {
     z-index: 1;  
 }
 
+.image-section {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 40%; 
+    padding: 20px;
+    text-align: left;
+    z-index: 1; 
+}
+
+.image-box {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  
+}
+
 #dynamicText {
     font-size: 4rem;
     animation: slide-in 1.5s ease-out forwards;
