@@ -139,6 +139,7 @@ footer {
     text-align: center;
     border-top: 2px solid #444;
     z-index: 9999; /* Assure que le footer reste au-dessus des autres éléments */
+    margin-top: 2rem;
 }
 
 /* Style pour la section contact */
@@ -431,6 +432,7 @@ button:hover {
 @media (max-width: 768px) {
     footer {
         padding: 0.8rem;
+        margin-top: 1.5rem; /* Ajuste l'espace au-dessus du footer sur les petites résolutions */
     }
 
     footer h2 {
@@ -447,6 +449,7 @@ button:hover {
 @media (max-width: 480px) {
     footer {
         padding: 0.6rem;
+        margin-top: 1rem; /* Réduit légèrement l'espace pour les très petits écrans */
     }
 
     footer h2 {
