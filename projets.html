@@ -112,5 +112,50 @@
             document.body.classList.add('teleport-in'); 
         });
     </script>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const items = document.querySelectorAll('.carousel-item');
+        const prevButton = document.querySelector('.prev-btn');
+        const nextButton = document.querySelector('.next-btn');
+
+        let angle = 0; // Angle initial
+        const itemCount = items.length; // Nombre total d'images
+        const rotationStep = 360 / itemCount; // Angle entre chaque image
+        let autoRotateInterval;
+
+        // Positionner les cartes en cercle
+        items.forEach((item, index) => {
+            const currentAngle = index * rotationStep;
+            item.style.transform = `rotateY(${currentAngle}deg) translateZ(250px)`; // Position en cercle
+        });
+
+        // Fonction pour tourner le carrousel
+        const rotateCarousel = (direction) => {
+            angle += direction * rotationStep; // Met à jour l'angle
+            carousel.style.transform = `rotateY(${angle}deg)`;
+            resetAutoRotate(); // Redémarrer l'auto-rotation après une action manuelle
+        };
+
+        // Fonction d'auto-rotation avec une pause de 3 secondes
+        const autoRotate = () => {
+            autoRotateInterval = setInterval(() => {
+                rotateCarousel(-1); // Tourne automatiquement vers la droite
+            }, 3000); // Pause de 3 secondes
+        };
+
+        // Arrêter et redémarrer l'auto-rotation après une interaction manuelle
+        const resetAutoRotate = () => {
+            clearInterval(autoRotateInterval);
+            autoRotate(); // Redémarre l'auto-rotation
+        };
+
+        // Événements des boutons
+        nextButton.addEventListener('click', () => rotateCarousel(-1)); // Tourne vers la droite
+        prevButton.addEventListener('click', () => rotateCarousel(1)); // Tourne vers la gauche
+
+        // Démarrer l'auto-rotation au chargement
+        autoRotate();
+    </script>
     
 </html>
