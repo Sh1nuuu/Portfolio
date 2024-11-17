@@ -58,16 +58,16 @@
             <p>Voici quelques-uns de mes projets récents, où j'ai appliqué mes compétences en technologies IoT et réseaux</p>
             
             <!-- Carrousel des projets -->
-            <div class="carousel">
-                <div class="project-card card-1" onclick="window.location.href='https://github.com/Sh1nuuu/SAE_502'">
-                    <h3>Capteurs IoT dans un hôpital</h3>
-                    <p>Développement d'un système de surveillance basé sur des capteurs IoT pour surveiller l'environnement hospitalier, y compris la température, l'humidité, et la qualité de l'air.</p>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item"><img src="https://via.placeholder.com/200x150/ff7f7f/333333?text=Image+1" alt="Image 1"></div>
+                    <div class="carousel-item"><img src="https://via.placeholder.com/200x150/7f7fff/333333?text=Image+2" alt="Image 2"></div>
+                    <div class="carousel-item"><img src="https://via.placeholder.com/200x150/7fff7f/333333?text=Image+3" alt="Image 3"></div>
+                    <div class="carousel-item"><img src="https://via.placeholder.com/200x150/ffff7f/333333?text=Image+4" alt="Image 4"></div>
+                    <div class="carousel-item"><img src="https://via.placeholder.com/200x150/ff7fff/333333?text=Image+5" alt="Image 5"></div>
                 </div>
-        
-                <div class="project-card card-2" onclick="changePage('projet2.html');">
-                    <h3>Réseau de Communication pour Smart Cities</h3>
-                    <p>Création d'un réseau de capteurs interconnectés pour la gestion de la circulation et la qualité de l'air dans les villes intelligentes.</p>
-                </div>
+                <button class="carousel-btn prev-btn">&#10094;</button>
+                <button class="carousel-btn next-btn">&#10095;</button>
             </div>
         </section>
     </div>
@@ -83,7 +83,7 @@
     <!-- Script pour l'animation de texte -->
     <script>
         // Animation du texte typewriter
-        const text = "Bienvenue sur la page de mes projets";
+        const text = "ienvenue sur la page de mes projets";
         let index = 0;
     
         function typeWriter() {
@@ -112,5 +112,50 @@
             document.body.classList.add('teleport-in'); 
         });
     </script>
-    
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const items = document.querySelectorAll('.carousel-item');
+        const prevButton = document.querySelector('.prev-btn');
+        const nextButton = document.querySelector('.next-btn');
+
+        let angle = 0; // Angle initial
+        const itemCount = items.length; // Nombre total d'images
+        const rotationStep = 360 / itemCount; // Angle entre chaque image
+        let autoRotateInterval;
+
+        // Positionner les cartes en cercle
+        items.forEach((item, index) => {
+            const currentAngle = index * rotationStep;
+            item.style.transform = `rotateY(${currentAngle}deg) translateZ(250px)`; // Position en cercle
+        });
+
+        // Fonction pour tourner le carrousel
+        const rotateCarousel = (direction) => {
+            angle += direction * rotationStep; // Met à jour l'angle
+            carousel.style.transform = `rotateY(${angle}deg)`;
+            resetAutoRotate(); // Redémarrer l'auto-rotation après une action manuelle
+        };
+
+        // Fonction d'auto-rotation avec une pause de 3 secondes
+        const autoRotate = () => {
+            autoRotateInterval = setInterval(() => {
+                rotateCarousel(-1); // Tourne automatiquement vers la droite
+            }, 3000); // Pause de 3 secondes
+        };
+
+        // Arrêter et redémarrer l'auto-rotation après une interaction manuelle
+        const resetAutoRotate = () => {
+            clearInterval(autoRotateInterval);
+            autoRotate(); // Redémarre l'auto-rotation
+        };
+
+        // Événements des boutons
+        nextButton.addEventListener('click', () => rotateCarousel(-1)); // Tourne vers la droite
+        prevButton.addEventListener('click', () => rotateCarousel(1)); // Tourne vers la gauche
+
+        // Démarrer l'auto-rotation au chargement
+        autoRotate();
+    </script>
+</body>
 </html>
