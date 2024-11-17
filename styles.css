@@ -6,7 +6,6 @@ body {
     padding: 0;
     overflow-x: hidden;
     box-sizing: border-box;
-    overflow: hidden;
     min-height: 100vh;
 }
 
