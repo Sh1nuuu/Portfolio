@@ -19,11 +19,9 @@ body {
 
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 2rem;
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 20px; 
 }
 
 header {
@@ -50,17 +48,22 @@ header {
 
 .menu-box {
     background-color: #1e1e1e;
-    padding: 2rem;
-    border-radius: 15px;
+    padding: 15px;
+    border-radius: 5px;
     transition: transform 0.4s, box-shadow 0.4s;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    margin: 15px;
-    display: inline-block;
+    margin: 5px;
+    margin-bottom: 15px;
+    width: 100%;
 }
 
 .menu-box:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 255, 128, 0.4);
+}
+
+.menu-box:last-child {
+    margin-bottom: 0;
 }
 
 .box {
@@ -87,14 +90,14 @@ footer {
     border-top: 2px solid #444;
 }
 
-button {
-    background-color: #29a3a3;
-    border: none;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+footer {
+    margin-top: auto;
+    width: 100%;
+    background-color: #333; 
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative; 
 }
 
 button:hover {
