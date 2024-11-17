@@ -69,41 +69,79 @@ header {
     opacity: 0;
 }
 
-.project-box {
-    display: inline-block;
-    width: 45%;
-    margin: 20px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.carousel {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    perspective: 1500px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .project-card {
-    padding: 20px;
+    width: 300px;
+    height: 400px;
+    margin: 0 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
     background-color: #f8f8f8;
-    border-bottom: 1px solid #ddd;
-    transition: background-color 0.3s ease;
+    transition: transform 1s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+    position: absolute;
+    opacity: 0.9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .project-card h3 {
     font-size: 1.5em;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .project-card p {
     font-size: 1em;
     color: #555;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.carousel:hover .project-card {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .project-box:hover .project-card {
     background-color: #e0e0e0;
+}
+
+/* Animation pour créer l'effet de rotation */
+@keyframes rotateCarousel {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+/* Définir la taille du carrousel et son animation */
+.carousel {
+    animation: rotateCarousel 10s infinite linear; /* Animation de rotation continue */
+}
+
+/* Positionner les cartes sur un cercle */
+.carousel .project-card:nth-child(1) {
+    transform: rotateY(0deg) translateZ(500px);
+}
+.carousel .project-card:nth-child(2) {
+    transform: rotateY(72deg) translateZ(500px);
+}
+.carousel .project-card:nth-child(3) {
+    transform: rotateY(144deg) translateZ(500px);
+}
+.carousel .project-card:nth-child(4) {
+    transform: rotateY(216deg) translateZ(500px);
+}
+.carousel .project-card:nth-child(5) {
+    transform: rotateY(288deg) translateZ(500px);
 }
 
 @keyframes slide-in {
