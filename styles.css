@@ -35,6 +35,16 @@ header {
     z-index: 1;
 }
 
+.projets-content {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 40%;  
+    padding: 20px;
+    text-align: left;
+    z-index: 1;  
+}
+
 #dynamicText {
     font-size: 4rem;
     animation: slide-in 1.5s ease-out forwards;
