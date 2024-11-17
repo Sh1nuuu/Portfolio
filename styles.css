@@ -1,74 +1,226 @@
-/* Style global pour un design futuriste */
 body {
-    background-color: #0e0e0e; /* Fond sombre */
-    color: #e0e0e0; /* Texte clair */
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-h1 {
-    font-size: 4rem;
-    color: #00ffcc;
+.animated-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #000428, #004e92);
+    z-index: -3;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+header {
     text-align: center;
-    margin: 2rem 0;
-    text-shadow: 0 0 10px #00ffcc;
+    margin-bottom: 2rem;
 }
 
-/* Animation d'apparition fluide */
-@keyframes fadeIn {
-    from {
+#dynamicText {
+    font-size: 4rem;
+    animation: slide-in 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(100%);
         opacity: 0;
-        transform: translateY(30px);
     }
-    to {
-        opacity: 1;
+    100% {
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
-h1 {
-    animation: fadeIn 2s ease-in-out;
+.menu-box {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 15px;
+    transition: transform 0.4s, box-shadow 0.4s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin: 1rem 0;
-    text-align: justify;
+.menu-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 255, 128, 0.4);
 }
 
-a {
-    color: #00ffcc;
+.box {
     text-decoration: none;
-    transition: color 0.3s;
+    color: #ffffff;
+    display: block;
+    text-align: center;
 }
 
-a:hover {
-    color: #ff66ff;
+.box h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
 }
 
-/* Boutons futuristes */
+.box p {
+    font-size: 1rem;
+}
+
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 1rem;
+    background-color: #1e1e1e;
+    border-top: 2px solid #444;
+}
+
 button {
-    background-color: transparent;
-    border: 2px solid #00ffcc;
-    color: #00ffcc;
-    padding: 10px 20px;
+    background-color: #29a3a3;
+    border: none;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #00ffcc;
-    color: #0e0e0e;
+    background-color: #20b2b2;
 }
 
-/* Section spécifique */
-.section-futuriste {
-    background-color: #151515;
-    padding: 2rem;
-    margin: 1rem 0;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+.teleport-in {
+    animation: fade-in 1s forwards;
 }
+
+.teleport-out {
+    animation: fade-out 1s forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.floating-orb {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: floatOrb 10s infinite linear;
+}
+
+@keyframes floatOrb {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0.5;
+    }
+    25% {
+        transform: translate(100vw, 50vh);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(50vw, 100vh);
+        opacity: 1;
+    }
+    75% {
+        transform: translate(-50vw, -50vh);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.5;
+    }
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    animation: shimmer 5s infinite ease-in-out;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Positioning orbs and stars randomly */
+.floating-orb:nth-child(2) {
+    top: 10%;
+    left: 15%;
+    animation-duration: 12s;
+}
+.floating-orb:nth-child(3) {
+    top: 50%;
+    left: 60%;
+    animation-duration: 15s;
+}
+.floating-orb:nth-child(4) {
+    top: 80%;
+    left: 30%;
+    animation-duration: 18s;
+}
+
+.star:nth-child(5) {
+    top: 20%;
+    left: 25%;
+    animation-duration: 4s;
+}
+.star:nth-child(6) {
+    top: 40%;
+    left: 70%;
+    animation-duration: 6s;
+}
+.star:nth-child(7) {
+    top: 60%;
+    left: 50%;
+    animation-duration: 5s;
+}
+.star:nth-child(8) {
+    top: 30%;
+    left: 80%;
+    animation-duration: 3s;
+}
+.star:nth-child(9) {
+    top: 70%;
+    left: 20%;
+    animation-duration: 7s;
+}
+
