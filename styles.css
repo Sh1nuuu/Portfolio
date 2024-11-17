@@ -81,32 +81,29 @@ header {
 
 .carousel {
     display: flex;
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
-    perspective: 1000px; /* Ajoute une perspective 3D */
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    perspective: 1500px; /* Donne un effet de profondeur */
+    position: relative;
+    margin-top: 30px;
 }
 
 .project-card {
     width: 250px;
     height: 200px;
-    margin-right: 20px;
     background-color: #444;
     color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s;
+    transform-style: preserve-3d; /* Nécessaire pour la rotation 3D */
+    transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
-    transform-style: preserve-3d; /* Préserve les transformations 3D */
-    z-index: 1;
-    transform: rotateY(0deg); /* Commence sans rotation */
+    margin: 0 20px;
 }
 
 .project-card:hover {
-    transform: translateY(-20px);
+    transform: rotateY(15deg) translateZ(40px); /* Rotation 3D */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 

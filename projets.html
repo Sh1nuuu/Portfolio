@@ -132,12 +132,12 @@
             // Fonction pour gérer l'animation de survol
             cards.forEach(card => {
                 card.addEventListener('mouseover', () => {
-                    card.style.transform = 'translateY(-20px)';
+                    card.style.transform = 'rotateY(15deg) translateZ(40px)';
                     card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.5)';
                 });
     
                 card.addEventListener('mouseout', () => {
-                    card.style.transform = 'translateY(0)';
+                    card.style.transform = 'rotateY(0deg) translateZ(0)';
                     card.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.3)';
                 });
             });
@@ -180,7 +180,5 @@
             document.body.appendChild(prevButton);
         });
     </script>
-    
-
 </body>
 </html>
