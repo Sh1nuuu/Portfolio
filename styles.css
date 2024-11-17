@@ -74,7 +74,7 @@ header {
     width: 80%;
     margin: 0 auto;
     position: relative;
-    perspective: 1500px; /* Crée la profondeur pour l'effet 3D */
+    perspective: 1200px; /* Crée la profondeur pour l'effet 3D */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,13 +82,13 @@ header {
 }
 
 .project-card {
-    width: 300px;
-    height: 400px;
+    width: 200px; /* Réduire la taille des cartes */
+    height: 300px; /* Réduire la taille des cartes */
     margin: 0 20px;
-    border: 2px solid #312e2e;
+    border: 2px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #161515;
+    background-color: #f8f8f8;
     transition: transform 1s ease, box-shadow 0.5s ease;
     cursor: pointer;
     position: absolute;
@@ -97,7 +97,7 @@ header {
 }
 
 .project-card h3 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin-top: 20px;
     text-align: center;
 }
@@ -111,7 +111,7 @@ header {
 
 .carousel:hover .project-card {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* Animation de rotation du carrousel */
@@ -120,21 +120,21 @@ header {
     100% { transform: rotateY(360deg); }
 }
 
-/* Positionner les cartes de manière circulaire */
+/* Positionner les cartes de manière circulaire avec décalage pour l'effet 3D */
 .carousel .project-card:nth-child(1) {
-    transform: rotateY(0deg) translateZ(500px);
+    transform: rotateY(0deg) translateZ(400px) scale(0.8);
 }
 .carousel .project-card:nth-child(2) {
-    transform: rotateY(72deg) translateZ(500px);
+    transform: rotateY(72deg) translateZ(400px) scale(0.8);
 }
 .carousel .project-card:nth-child(3) {
-    transform: rotateY(144deg) translateZ(500px);
+    transform: rotateY(144deg) translateZ(400px) scale(0.8);
 }
 .carousel .project-card:nth-child(4) {
-    transform: rotateY(216deg) translateZ(500px);
+    transform: rotateY(216deg) translateZ(400px) scale(0.8);
 }
 .carousel .project-card:nth-child(5) {
-    transform: rotateY(288deg) translateZ(500px);
+    transform: rotateY(288deg) translateZ(400px) scale(0.8);
 }
 
 /* Animation de texte entrant */
@@ -327,12 +327,7 @@ button:hover {
     animation-duration: 5s;
 }
 .star:nth-child(8) {
-    top: 30%;
-    left: 80%;
-    animation-duration: 3s;
-}
-.star:nth-child(9) {
-    top: 70%;
+    top: 80%;
     left: 20%;
     animation-duration: 7s;
 }
