@@ -28,34 +28,28 @@
 
     <div class="container">
         <section class="first">
-            <div class="menu-box">
-                <a href="index.html" class="box" id="cv" onclick="event.preventDefault(); changePage('index.html');">
-                    <h3>Accueil</h3>
-                    <p>Reviens au début.</p>
-                </a>
+            <div class="menu-box" onclick="changePage('index.html');">
+                <h3>Accueil</h3>
+                <p>Reviens au début.</p>
             </div>
-            <div class="menu-box">
-                <a href="cv.html" class="box" id="cv" onclick="event.preventDefault(); changePage('cv.html');">
-                    <h3>Mon CV</h3>
-                    <p>Consultez mon parcours professionnel et mes expériences.</p>
-                </a>
+            <div class="menu-box" onclick="window.location.href='https://github.com/Sh1nuuu/SAE_502'">
+                <h3>Mon CV</h3>
+                <p>Consultez mon parcours professionnel et mes expériences.</p>
             </div>
-            <div class="menu-box">
-                <a href="certifications.html" class="box" id="certifications" onclick="event.preventDefault(); changePage('certifications.html');">
-                    <h3>Certifications</h3>
-                    <p>Consultez mes certifications en réseaux et IoT</p>
-                </a>
+            <div class="menu-box" onclick="changePage('certifications.html');">
+                <h3>Certifications</h3>
+                <p>Consultez mes certifications en réseaux et IoT</p>
             </div>
         </section>
 
         <section class="projets-content">
             <h2>Projets IoT et Réseaux</h2>
             <p>Voici quelques-uns de mes projets récents, où j'ai appliqué mes compétences en technologies IoT et réseaux</p>
-            <div class="project">
+            <div class="project" onclick="changePage('projet1.html');">
                 <h3>Capteurs IoT dans un hôpital</h3>
                 <p>Développement d'un système de surveillance basé sur des capteurs IoT pour surveiller l'environnement hospitalier, y compris la température, l'humidité, et la qualité de l'air</p>
             </div>
-            <div class="project">
+            <div class="project" onclick="changePage('projet2.html');">
                 <h3>Réseau de Communication pour Smart Cities</h3>
                 <p>Création d'un réseau de capteurs interconnectés pour la gestion de la circulation et la qualité de l'air dans les villes intelligentes</p>
             </div>
@@ -96,9 +90,7 @@
         window.addEventListener('load', function () {
             document.body.classList.add('teleport-in'); 
         });
-
     </script>
 
 </body>
-
 </html>
