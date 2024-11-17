@@ -55,6 +55,8 @@ header {
     border-radius: 15px;
     transition: transform 0.4s, box-shadow 0.4s;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 15px;
+    display: inline-block;
 }
 
 .menu-box:hover {
