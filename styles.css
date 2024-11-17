@@ -68,6 +68,48 @@ header {
     opacity: 0;
 }
 
+.projets-content {
+    margin: 20px;
+    text-align: center;
+}
+
+.project-box {
+    display: inline-block;
+    width: 45%;
+    margin: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.project-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1em;
+    color: #555;
+}
+
+.project-box:hover .project-card {
+    background-color: #e0e0e0;
+}
+
 @keyframes slide-in {
     0% {
         transform: translateY(100%);
