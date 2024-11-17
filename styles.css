@@ -84,6 +84,9 @@ header {
     overflow-x: hidden;
     width: 100%;
     position: relative;
+    perspective: 1000px; /* Ajoute une perspective 3D */
+    align-items: center;
+    justify-content: center;
 }
 
 .project-card {
@@ -95,8 +98,11 @@ header {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s;
     position: relative;
+    transform-style: preserve-3d; /* Préserve les transformations 3D */
+    z-index: 1;
+    transform: rotateY(0deg); /* Commence sans rotation */
 }
 
 .project-card:hover {
@@ -123,9 +129,21 @@ header {
     line-height: 1.5;
 }
 
+.carousel .project-card:nth-child(1) {
+    transform: rotateY(-30deg) translateZ(200px); /* Déplace la première carte en arrière */
+}
+
+.carousel .project-card:nth-child(2) {
+    transform: rotateY(0deg) translateZ(100px); /* La carte du milieu est la plus proche */
+}
+
+.carousel .project-card:nth-child(3) {
+    transform: rotateY(30deg) translateZ(200px); /* Déplace la dernière carte en arrière */
+}
+
 .project-card:hover {
-    z-index: 10;
-    transform: translateY(-20px);
+    transform: translateY(-20px) rotateY(15deg) translateZ(250px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Hover effect to spread cards apart */

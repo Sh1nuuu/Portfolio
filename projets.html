@@ -82,9 +82,10 @@
 
     <!-- Script pour l'animation de texte -->
     <script>
+        // Animation du texte typewriter
         const text = "ienvenue sur la page de mes projets";
         let index = 0;
-
+    
         function typeWriter() {
             if (index < text.length) {
                 document.getElementById("dynamicText").innerHTML += text.charAt(index);
@@ -92,12 +93,12 @@
                 requestAnimationFrame(typeWriter); 
             }
         }
-
+    
         window.onload = function () {
             typeWriter();
             document.body.classList.add('teleport-in'); 
         };
-
+    
         // Fonction pour rediriger vers une autre page avec animation
         function changePage(url) {
             document.body.classList.add('teleport-out'); 
@@ -105,80 +106,81 @@
                 window.location.href = url; 
             }, 1000); 
         }
-
+    
+        // Ajout d'animation d'entrée lors du chargement de la page
         window.addEventListener('load', function () {
             document.body.classList.add('teleport-in'); 
         });
-
+    
+        // Carrousel avec animation
         document.addEventListener("DOMContentLoaded", () => {
-    const carousel = document.querySelector('.carousel');
-    const cards = document.querySelectorAll('.project-card');
-    const totalCards = cards.length;
-    let currentIndex = 0;
-
-    // Fonction pour déplacer le carrousel
-    function moveCarousel() {
-        if (currentIndex >= totalCards) {
-            currentIndex = 0; // Retour au début
-        }
-
-        const offset = -(currentIndex * (cards[0].offsetWidth + 20)); // Décalage en fonction de la largeur des cartes
-        carousel.style.transform = `translateX(${offset}px)`;
-    }
-
-    // Fonction pour gérer l'animation de survol
-    cards.forEach(card => {
-        card.addEventListener('mouseover', () => {
-            card.style.transform = 'translateY(-20px)';
-            card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.5)';
+            const carousel = document.querySelector('.carousel');
+            const cards = document.querySelectorAll('.project-card');
+            const totalCards = cards.length;
+            let currentIndex = 0;
+    
+            // Fonction pour déplacer le carrousel
+            function moveCarousel() {
+                if (currentIndex >= totalCards) {
+                    currentIndex = 0; // Retour au début
+                }
+    
+                const offset = -(currentIndex * (cards[0].offsetWidth + 20)); // Décalage en fonction de la largeur des cartes
+                carousel.style.transform = `translateX(${offset}px)`;
+            }
+    
+            // Fonction pour gérer l'animation de survol
+            cards.forEach(card => {
+                card.addEventListener('mouseover', () => {
+                    card.style.transform = 'translateY(-20px)';
+                    card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.5)';
+                });
+    
+                card.addEventListener('mouseout', () => {
+                    card.style.transform = 'translateY(0)';
+                    card.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.3)';
+                });
+            });
+    
+            // Défilement automatique du carrousel
+            setInterval(() => {
+                currentIndex++;
+                moveCarousel();
+            }, 3000); // Défilement toutes les 3 secondes
+    
+            // Fonction pour aller au suivant et précédent (si besoin)
+            function goToNext() {
+                currentIndex++;
+                moveCarousel();
+            }
+    
+            function goToPrev() {
+                currentIndex--;
+                if (currentIndex < 0) currentIndex = totalCards - 1; // Retour à la dernière carte
+                moveCarousel();
+            }
+    
+            // Ajoutez des boutons de navigation (optionnel)
+            const nextButton = document.createElement('button');
+            nextButton.innerText = 'Next';
+            nextButton.style.position = 'absolute';
+            nextButton.style.top = '50%';
+            nextButton.style.right = '10px';
+            nextButton.style.zIndex = '10';
+            nextButton.addEventListener('click', goToNext);
+            document.body.appendChild(nextButton);
+    
+            const prevButton = document.createElement('button');
+            prevButton.innerText = 'Prev';
+            prevButton.style.position = 'absolute';
+            prevButton.style.top = '50%';
+            prevButton.style.left = '10px';
+            prevButton.style.zIndex = '10';
+            prevButton.addEventListener('click', goToPrev);
+            document.body.appendChild(prevButton);
         });
-        
-        card.addEventListener('mouseout', () => {
-            card.style.transform = 'translateY(0)';
-            card.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.3)';
-        });
-    });
-
-    // Défilement automatique du carrousel
-    setInterval(() => {
-        currentIndex++;
-        moveCarousel();
-    }, 3000); // Défilement toutes les 3 secondes
-
-    // Fonction pour aller au suivant et précédent (si besoin)
-    function goToNext() {
-        currentIndex++;
-        moveCarousel();
-    }
-
-    function goToPrev() {
-        currentIndex--;
-        if (currentIndex < 0) currentIndex = totalCards - 1; // Retour à la dernière carte
-        moveCarousel();
-    }
-
-    // Ajoutez des boutons de navigation (optionnel)
-    const nextButton = document.createElement('button');
-    nextButton.innerText = 'Next';
-    nextButton.style.position = 'absolute';
-    nextButton.style.top = '50%';
-    nextButton.style.right = '10px';
-    nextButton.style.zIndex = '10';
-    nextButton.addEventListener('click', goToNext);
-    document.body.appendChild(nextButton);
-
-    const prevButton = document.createElement('button');
-    prevButton.innerText = 'Prev';
-    prevButton.style.position = 'absolute';
-    prevButton.style.top = '50%';
-    prevButton.style.left = '10px';
-    prevButton.style.zIndex = '10';
-    prevButton.addEventListener('click', goToPrev);
-    document.body.appendChild(prevButton);
-});
-
-
     </script>
+    
 
 </body>
 </html>
