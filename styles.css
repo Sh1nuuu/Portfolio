@@ -1,244 +1,74 @@
-/* Définition des couleurs */
-:root {
-    --primary-color: #00ff99; /* Vert néon (couleur principale) */
-    --secondary-color: #ff0055; /* Rose néon pour accentuer */
-    --background-color: #0a0a0a; /* Fond noir/gris très sombre */
-    --text-color: #ffffff; /* Texte blanc éclatant */
-    --box-background: rgba(20, 20, 20, 0.8); /* Boîtes de contenu semi-transparentes */
-    --footer-background: #111; /* Fond footer sombre */
-    --highlight-color: #ff66ff; /* Violet accent */
-}
-
-/* Style global */
-* {
+/* Style global pour un design futuriste */
+body {
+    background-color: #0e0e0e; /* Fond sombre */
+    color: #e0e0e0; /* Texte clair */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif; /* Police simple et moderne */
-}
-
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-size: 1rem;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* S'assure que le footer reste en bas */
-}
-
-/* Header */
-header {
-    text-align: center;
-    padding: 60px 20px;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 15px;
-    margin-top: 50px;
-    box-shadow: 0 0 30px var(--primary-color);
-    position: relative;
-    overflow: hidden;
 }
 
 h1 {
     font-size: 4rem;
-    color: var(--primary-color);
-    font-weight: bold;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    animation: pulse 2s infinite alternate;
-}
-
-#subText {
-    font-size: 1.5rem;
-    color: var(--highlight-color);
-    margin-top: 15px;
-    font-weight: 400;
-    font-style: italic;
-}
-
-/* Effet pulsation sur le titre */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        text-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
-    }
-    100% {
-        transform: scale(1.1);
-        text-shadow: 0 0 40px var(--primary-color), 0 0 60px var(--primary-color);
-    }
-}
-
-/* Conteneur principal */
-.container {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-/* Menu de navigation */
-.first {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    gap: 20px;
-}
-
-.menu-box {
-    background: var(--box-background);
-    padding: 20px;
-    border-radius: 15px;
-    width: 250px;
-    position: relative;
-    box-shadow: 0 0 15px 5px var(--primary-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.menu-box:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px 10px var(--secondary-color);
-}
-
-.menu-box h3 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.menu-box p {
-    font-size: 1rem;
-    color: var(--text-color);
-}
-
-/* Effet d'animation des orbes flottants */
-.floating-orb {
-    position: absolute;
-    border-radius: 50%;
-    background: var(--primary-color);
-    width: 100px;
-    height: 100px;
-    animation: floatOrbs 10s ease-in-out infinite;
-    opacity: 0.7;
-}
-
-.floating-orb:nth-child(1) {
-    top: 5%;
-    left: 10%;
-}
-
-.floating-orb:nth-child(2) {
-    top: 40%;
-    left: 70%;
-}
-
-.floating-orb:nth-child(3) {
-    bottom: 10%;
-    left: 85%;
-}
-
-@keyframes floatOrbs {
-    0% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-80px) rotate(180deg); }
-    100% { transform: translateY(0) rotate(360deg); }
-}
-
-/* Transition dynamique pour la page */
-body.teleport-in {
-    opacity: 0;
-    transform: scale(0.95);
-    animation: teleportIn 1s forwards;
-}
-
-body.teleport-out {
-    opacity: 1;
-    transform: scale(1);
-    animation: teleportOut 1s forwards;
-}
-
-@keyframes teleportIn {
-    0% { opacity: 0; transform: scale(0.95); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes teleportOut {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(0.95); }
-}
-
-/* Footer */
-footer {
-    padding: 20px;
-    background-color: var(--footer-background);
+    color: #00ffcc;
     text-align: center;
-    box-shadow: 0 0 30px var(--primary-color);
-    width: 100%;
-    position: fixed;
-    bottom: 0;
+    margin: 2rem 0;
+    text-shadow: 0 0 10px #00ffcc;
 }
 
-footer h2 {
-    font-size: 1.5rem;
-    color: var(--highlight-color);
-    margin-bottom: 10px;
-}
-
-footer button {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 12px 24px;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-footer button:hover {
-    background-color: var(--secondary-color);
-    transform: scale(1.05);
-}
-
-/* Texte dynamique */
-#dynamicText {
-    font-size: 3.5rem; /* Taille un peu réduite pour une police simple */
-    color: var(--primary-color);
-    font-weight: bold;
-    letter-spacing: 4px;
-    border-right: 2px solid var(--primary-color);
-    padding-right: 10px;
-    animation: typewriter 1s forwards, pulse 2s infinite alternate;
-}
-
-/* Animation de typewriter */
-@keyframes typewriter {
+/* Animation d'apparition fluide */
+@keyframes fadeIn {
     from {
-        width: 0;
+        opacity: 0;
+        transform: translateY(30px);
     }
     to {
-        width: 100%;
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* Lien avec effet hover */
+h1 {
+    animation: fadeIn 2s ease-in-out;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+    text-align: justify;
+}
+
 a {
-    color: var(--primary-color);
+    color: #00ffcc;
     text-decoration: none;
-    font-weight: 600;
+    transition: color 0.3s;
 }
 
 a:hover {
-    color: var(--secondary-color);
+    color: #ff66ff;
 }
 
-/* Transition de survol pour les boutons */
+/* Boutons futuristes */
 button {
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    background-color: transparent;
+    border: 2px solid #00ffcc;
+    color: #00ffcc;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
-    transform: translateY(-2px);
+    background-color: #00ffcc;
+    color: #0e0e0e;
+}
+
+/* Section spécifique */
+.section-futuriste {
+    background-color: #151515;
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
 }
