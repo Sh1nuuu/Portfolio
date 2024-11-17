@@ -1,3 +1,9 @@
+main {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; 
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #121212;
@@ -6,9 +12,11 @@ body {
     padding: 0;
     overflow-x: hidden;
     box-sizing: border-box;
-    min-height: 100%;
-    display: table;
+    min-height: 100vh;
+    display: flex;
     width: 100%;
+    flex: 1;
+
 }
 
 .animated-background {
@@ -24,6 +32,8 @@ body {
     flex-direction: column; 
     align-items: flex-start; 
     padding: 20px; 
+    width: 30%;
+    min-height: calc(100vh - 40 px);
 }
 
 header {
@@ -90,11 +100,12 @@ footer {
     left: 0;
     right: 0;
     display: table-row;;
-    margin-top: 3rem;
+    margin-top: auto;
     text-align: center;
     padding: 1rem;
     background-color: #1e1e1e;
     border-top: 2px solid #444;
+    width: 100%;
 }
 
 button {
