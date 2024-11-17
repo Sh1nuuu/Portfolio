@@ -43,6 +43,7 @@ header {
     padding: 20px;
     text-align: left;
     z-index: 1;  
+    margin: 20px;
 }
 
 .image-section {
@@ -66,11 +67,6 @@ header {
     font-size: 4rem;
     animation: slide-in 1.5s ease-out forwards;
     opacity: 0;
-}
-
-.projets-content {
-    margin: 20px;
-    text-align: center;
 }
 
 .project-box {
