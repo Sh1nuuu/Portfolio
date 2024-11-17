@@ -59,7 +59,7 @@ header {
     width: 100%;
     height: auto;
     border-radius: 10px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  
+    box-shadow: 0 4px 10px rgba(22, 22, 22, 0.5);  
 }
 
 #dynamicText {
