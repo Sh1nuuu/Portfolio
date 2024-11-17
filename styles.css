@@ -324,6 +324,11 @@ button:hover {
     border-radius: 10px;
 }
 
+.carousel-item:active {
+    transform: scale(0.95); /* Réduit légèrement la carte lors du clic */
+    transition: transform 0.2s ease-in-out;
+}
+
 .prev-btn {
     left: 0;
 }
