@@ -1,9 +1,3 @@
-main {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start; 
-}
-
 body {
     font-family: 'Arial', sans-serif;
     background-color: #121212;
