@@ -296,7 +296,8 @@ button:hover {
     font-size: 1.5em;
     text-align: center;
     transform-style: preserve-3d;
-    backface-visibility: hidden;
+    backface-visibility: hidden; /* Cache l'arrière des cartes */
+    cursor: pointer; /* Le curseur devient une main lors du survol */
 }
 
 .carousel-btn {
@@ -310,6 +311,17 @@ button:hover {
     cursor: pointer;
     border-radius: 50%;
     z-index: 2;
+}
+
+.carousel-link {
+    display: block; /* Le lien prend toute la place */
+    text-decoration: none; /* Enlève le souligné par défaut */
+    color: inherit; /* Hérite de la couleur du texte */
+}
+
+.carousel-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Change légèrement l'apparence au survol */
+    border-radius: 10px;
 }
 
 .prev-btn {
