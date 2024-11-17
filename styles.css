@@ -7,9 +7,13 @@ body {
     overflow-x: hidden;
     box-sizing: border-box;
     min-height: 100%;
-    display: table;
+    display: flex;
     width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
 }
+
 
 .animated-background {
     position: absolute;
@@ -37,6 +41,7 @@ body {
     width: 60%;
     position: relative;
     z-index: 1;
+    flex: 1;
 }
 
 header {
@@ -124,19 +129,33 @@ header {
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 0;  /* Fixe le footer en bas de la fenêtre */
     left: 0;
-    right: 0;
-    display: table-row;
-    margin-top: auto;
-    text-align: center;
-    padding: 1rem;
+    width: 100%; /* Prend toute la largeur de la page */
     background-color: #1e1e1e;
+    color: white;
+    padding: 1rem;
+    text-align: center;
     border-top: 2px solid #444;
+    z-index: 9999; /* Assure que le footer reste au-dessus des autres éléments */
 }
 
-button {
+/* Style pour la section contact */
+footer .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style pour le titre dans le footer */
+footer h2 {
+    margin: 0.5rem 0;
+}
+
+/* Style du bouton dans le footer */
+footer button {
     background-color: #29a3a3;
     border: none;
     color: white;
@@ -144,6 +163,10 @@ button {
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+footer button:hover {
+    background-color: #20b2b2;
 }
 
 button:hover {
@@ -402,5 +425,36 @@ button:hover {
     .star:nth-child(9) {
         top: 90%;
         left: 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 0.8rem;
+    }
+
+    footer h2 {
+        font-size: 1.2rem;
+    }
+
+    footer button {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+    }
+}
+
+/* Lorsque la largeur de l'écran est inférieure ou égale à 480px */
+@media (max-width: 480px) {
+    footer {
+        padding: 0.6rem;
+    }
+
+    footer h2 {
+        font-size: 1rem;
+    }
+
+    footer button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
     }
 }
