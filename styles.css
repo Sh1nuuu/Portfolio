@@ -69,24 +69,26 @@ header {
     opacity: 0;
 }
 
+/* Ajout du carrousel avec l'animation */
 .carousel {
     width: 80%;
     margin: 0 auto;
     position: relative;
-    perspective: 1500px; 
+    perspective: 1500px; /* Crée la profondeur pour l'effet 3D */
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: rotateCarousel 10s infinite linear; /* Rotation continue du carrousel */
 }
 
 .project-card {
     width: 300px;
     height: 400px;
     margin: 0 20px;
-    border: 2px solid #ddd;
+    border: 2px solid #312e2e;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #f8f8f8;
+    background-color: #161515;
     transition: transform 1s ease, box-shadow 0.5s ease;
     cursor: pointer;
     position: absolute;
@@ -112,22 +114,13 @@ header {
     transform: scale(1.1);
 }
 
-.project-box:hover .project-card {
-    background-color: #e0e0e0;
-}
-
-/* Animation pour créer l'effet de rotation */
+/* Animation de rotation du carrousel */
 @keyframes rotateCarousel {
     0% { transform: rotateY(0deg); }
     100% { transform: rotateY(360deg); }
 }
 
-/* Définir la taille du carrousel et son animation */
-.carousel {
-    animation: rotateCarousel 10s infinite linear; /* Animation de rotation continue */
-}
-
-/* Positionner les cartes sur un cercle */
+/* Positionner les cartes de manière circulaire */
 .carousel .project-card:nth-child(1) {
     transform: rotateY(0deg) translateZ(500px);
 }
@@ -144,6 +137,7 @@ header {
     transform: rotateY(288deg) translateZ(500px);
 }
 
+/* Animation de texte entrant */
 @keyframes slide-in {
     0% {
         transform: translateY(100%);
