@@ -210,7 +210,7 @@ footer button:hover {
     letter-spacing: 4px;
     border-right: 2px solid var(--primary-color);
     padding-right: 10px;
-    animation: typewriter 4s steps(30) 1s forwards, pulse 2s infinite alternate;
+    animation: typewriter 1s forwards, pulse 2s infinite alternate;
 }
 
 /* Animation de typewriter */
