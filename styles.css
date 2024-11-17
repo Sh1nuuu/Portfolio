@@ -95,7 +95,6 @@ footer {
     padding: 1rem;
     background-color: #1e1e1e;
     border-top: 2px solid #444;
-    width: 100%;
 }
 
 button {
@@ -236,4 +235,3 @@ button:hover {
     left: 20%;
     animation-duration: 7s;
 }
-
