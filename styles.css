@@ -1,4 +1,4 @@
-body {
+ body {
     font-family: 'Arial', sans-serif;
     background-color: #121212;
     color: #ffffff;
@@ -308,24 +308,25 @@ button:hover {
     .project-card p {
         font-size: 0.9rem;
     }
-}
+
 
 .star:nth-child(6) {
-        top: 40%;
-        left: 60%;
-    }
+    top: 40%;
+    left: 60%;
+}
 
-    .star:nth-child(7) {
-        top: 60%;
-        left: 30%;
-    }
+.star:nth-child(7) {
+    top: 60%;
+    left: 30%;
+}
 
-    .star:nth-child(8) {
-        top: 80%;
-        left: 50%;
-    }
+.star:nth-child(8) {
+    top: 80%;
+    left: 50%;
+}
 
-    .star:nth-child(9) {
-        top: 90%;
-        left: 10%;
-    }
+.star:nth-child(9) {
+    top: 90%;
+    left: 10%;
+}
+}
