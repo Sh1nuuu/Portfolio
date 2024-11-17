@@ -58,16 +58,20 @@
             <p>Voici quelques-uns de mes projets récents, où j'ai appliqué mes compétences en technologies IoT et réseaux</p>
             
             <!-- Carrousel des projets -->
-            <div class="carousel">
-                <div class="project-card card-1" onclick="window.location.href='https://github.com/Sh1nuuu/SAE_502'">
-                    <h3>Capteurs IoT dans un hôpital</h3>
-                    <p>Développement d'un système de surveillance basé sur des capteurs IoT pour surveiller l'environnement hospitalier, y compris la température, l'humidité, et la qualité de l'air.</p>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item">
+                        <h3>Capteurs IoT dans un hôpital</h3>
+                        <p>Développement d'un système de surveillance basé sur des capteurs IoT pour surveiller l'environnement hospitalier, y compris la température, l'humidité, et la qualité de l'air.</p>
+                    </div>
+            
+                    <div class="carousel-item">
+                        <h3>Réseau de Communication pour Smart Cities</h3>
+                        <p>Création d'un réseau de capteurs interconnectés pour la gestion de la circulation et la qualité de l'air dans les villes intelligentes.</p>
+                    </div>
                 </div>
-        
-                <div class="project-card card-2" onclick="changePage('projet2.html');">
-                    <h3>Réseau de Communication pour Smart Cities</h3>
-                    <p>Création d'un réseau de capteurs interconnectés pour la gestion de la circulation et la qualité de l'air dans les villes intelligentes.</p>
-                </div>
+                <button class="carousel-btn prev-btn">Prev</button>
+                <button class="carousel-btn next-btn">Next</button>
             </div>
         </section>
     </div>
@@ -113,6 +117,7 @@
         });
     </script>
 
+    <!-- Script pour le carrousel 3D -->
     <script>
         const carousel = document.querySelector('.carousel');
         const items = document.querySelectorAll('.carousel-item');
