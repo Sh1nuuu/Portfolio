@@ -81,24 +81,22 @@ header {
 
 .carousel {
     display: flex;
-    justify-content: space-evenly;
+    overflow-x: hidden;
+    width: 100%;
     position: relative;
-    margin-top: 30px;
 }
 
 .project-card {
     width: 250px;
     height: 200px;
+    margin-right: 20px;
     background-color: #444;
     color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    transform: translateZ(0);
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
-    z-index: 1;
-    margin: 0 -40px;
 }
 
 .project-card:hover {
@@ -113,6 +111,7 @@ header {
 .card-2 {
     background-color: #e74c3c;
 }
+
 
 .project-card h3 {
     font-size: 1.5rem;
