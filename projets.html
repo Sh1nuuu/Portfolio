@@ -8,26 +8,36 @@
 </head>
 <body>
 
+    <!-- Animation de fond -->
     <div class="animated-background"></div>
+
+    <!-- Orbes flottants -->
     <div class="floating-orb"></div>
     <div class="floating-orb"></div>
     <div class="floating-orb"></div>
+
+    <!-- Éléments étoiles flottantes -->
     <div class="star"></div>
     <div class="star"></div>
     <div class="star"></div>
     <div class="star"></div>
     <div class="star"></div>
+
+    <!-- Formes flottantes -->
     <div class="floating-shape floating-shape-1"></div>
     <div class="floating-shape floating-shape-2"></div>
     <div class="floating-shape floating-shape-3"></div>
 
+    <!-- Header avec animation de texte -->
     <header>
         <h1 id="dynamicText">B</h1>
         <p id="subText">Découvrez les projets passionnants que j'ai réalisés en IoT et réseaux</p>
     </header>
 
+    <!-- Conteneur principal avec sections -->
     <div class="container">
         <section class="first">
+            <!-- Menu de navigation -->
             <div class="menu-box" onclick="changePage('index.html');">
                 <h3>Accueil</h3>
                 <p>Reviens au début.</p>
@@ -42,10 +52,12 @@
             </div>
         </section>
 
+        <!-- Section Projets -->
         <section class="projets-content">
             <h2>Projets IoT et Réseaux</h2>
             <p>Voici quelques-uns de mes projets récents, où j'ai appliqué mes compétences en technologies IoT et réseaux</p>
             
+            <!-- Carrousel des projets -->
             <div class="carousel">
                 <div class="project-card" onclick="window.location.href='https://github.com/Sh1nuuu/SAE_502'">
                     <h3>Capteurs IoT dans un hôpital</h3>
@@ -56,12 +68,13 @@
                     <h3>Réseau de Communication pour Smart Cities</h3>
                     <p>Création d'un réseau de capteurs interconnectés pour la gestion de la circulation et la qualité de l'air dans les villes intelligentes.</p>
                 </div>
-        
-                <!-- Ajoutez d'autres cartes si nécessaire -->
+
+                <!-- Ajoutez d'autres cartes de projet ici -->
             </div>
         </section>
     </div>
 
+    <!-- Section Contact -->
     <footer>
         <section class="contact">
             <h2>Contactez-moi</h2>
@@ -69,6 +82,7 @@
         </section>
     </footer>
 
+    <!-- Script pour l'animation de texte -->
     <script>
         const text = "ienvenue sur la page de mes projets";
         let index = 0;
@@ -86,6 +100,7 @@
             document.body.classList.add('teleport-in'); 
         };
 
+        // Fonction pour rediriger vers une autre page avec animation
         function changePage(url) {
             document.body.classList.add('teleport-out'); 
             setTimeout(function () {
