@@ -158,26 +158,8 @@
                 currentIndex--;
                 if (currentIndex < 0) currentIndex = totalCards - 1; // Retour à la dernière carte
                 moveCarousel();
-            }
-    
-            // Ajoutez des boutons de navigation (optionnel)
-            const nextButton = document.createElement('button');
-            nextButton.innerText = 'Next';
-            nextButton.style.position = 'absolute';
-            nextButton.style.top = '50%';
-            nextButton.style.right = '10px';
-            nextButton.style.zIndex = '10';
-            nextButton.addEventListener('click', goToNext);
-            document.body.appendChild(nextButton);
-    
-            const prevButton = document.createElement('button');
-            prevButton.innerText = 'Prev';
-            prevButton.style.position = 'absolute';
-            prevButton.style.top = '50%';
-            prevButton.style.left = '10px';
-            prevButton.style.zIndex = '10';
-            prevButton.addEventListener('click', goToPrev);
-            document.body.appendChild(prevButton);
+        
+            }  
         });
     </script>
 </body>
