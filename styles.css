@@ -6,7 +6,7 @@ body {
     padding: 0;
     overflow-x: hidden;
     box-sizing: border-box;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 .animated-background {
@@ -63,7 +63,7 @@ header {
 }
 
 .menu-box:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0; 
 }
 
 .box {
@@ -83,6 +83,9 @@ header {
 }
 
 footer {
+    position: absolute;
+    bottom: 0;
+    display: table-row;;
     margin-top: 3rem;
     text-align: center;
     padding: 1rem;
@@ -90,14 +93,14 @@ footer {
     border-top: 2px solid #444;
 }
 
-footer {
-    margin-top: auto;
-    width: 100%;
-    background-color: #333; 
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    position: relative; 
+button {
+    background-color: #29a3a3;
+    border: none;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
