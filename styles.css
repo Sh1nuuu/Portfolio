@@ -83,6 +83,18 @@ header {
     z-index: 1;
 }
 
+.image-section1 {
+    position: absolute;
+    top: 170px;
+    right: 100px;
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+    z-index: 1;
+    border-radius: 10px;
+    justify-content: center;
+}
+
 .image-box {
     width: 100%;
     height: auto;
@@ -533,3 +545,4 @@ button:hover {
         height: 400px; /* Encore plus petit sur les très petits écrans */
     }
 }
+
