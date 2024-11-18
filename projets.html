@@ -14,7 +14,6 @@
     <!-- Orbes flottants -->
     <div class="floating-orb"></div>
     <div class="floating-orb"></div>
-    <div class="floating-orb"></div>
 
     <!-- Éléments étoiles flottantes -->
     <div class="star"></div>
@@ -33,7 +32,7 @@
         <h1 id="dynamicText">B</h1>
         <p id="subText">Découvrez les projets passionnants que j'ai réalisés en IoT et réseaux</p>
     </header>
-
+    <section class="section-left"> 
     <!-- Conteneur principal avec sections -->
     <div class="container">
         <section class="first">
@@ -51,7 +50,9 @@
                 <p>Consultez mes certifications en réseaux et IoT</p>
             </div>
         </section>
+    </section>
 
+    <section class="section-right">    
         <!-- Section Projets -->
         <section class="projets-content">
             <h2>Projets IoT et Réseaux</h2>
@@ -79,18 +80,20 @@
                 <button class="carousel-btn prev-btn">&#8249;</button>
                 <button class="carousel-btn next-btn">&#8250;</button>
             </div>
-
-    <!-- Section Contact -->
-    <footer>
-        <section class="contact">
-            <h2>Contactez-moi</h2>
-            <button onclick="window.location.href='mailto:theo.marchand0914@gmail.com'">Envoyer un message</button>
         </section>
-    </footer>
+    </section>
+        <!-- Section Contact -->
+        <footer>
+            <section class="contact">
+                <h2>Contactez-moi</h2>
+                <button onclick="window.location.href='mailto:theo.marchand0914@gmail.com'">Envoyer un message</button>
+            </section>
+        </footer>
+
+    </div> <!-- Fin de container -->
 
     <!-- Script pour l'animation de texte -->
     <script>
-        // Animation du texte typewriter
         const text = "ienvenue sur la page de mes projets";
         let index = 0;
     
@@ -128,42 +131,36 @@
         const prevButton = document.querySelector('.prev-btn');
         const nextButton = document.querySelector('.next-btn');
 
-        let angle = 0; // Angle initial
-        const itemCount = items.length; // Nombre total d'images
-        const rotationStep = 360 / itemCount; // Angle entre chaque image
+        let angle = 0; 
+        const itemCount = items.length;
+        const rotationStep = 360 / itemCount;
         let autoRotateInterval;
 
-        // Positionner les cartes en cercle
         items.forEach((item, index) => {
             const currentAngle = index * rotationStep;
-            item.style.transform = `rotateY(${currentAngle}deg) translateZ(250px)`; // Position en cercle
+            item.style.transform = `rotateY(${currentAngle}deg) translateZ(250px)`;
         });
 
-        // Fonction pour tourner le carrousel
         const rotateCarousel = (direction) => {
-            angle += direction * rotationStep; // Met à jour l'angle
+            angle += direction * rotationStep;
             carousel.style.transform = `rotateY(${angle}deg)`;
-            resetAutoRotate(); // Redémarrer l'auto-rotation après une action manuelle
+            resetAutoRotate();
         };
 
-        // Fonction d'auto-rotation avec une pause de 3 secondes
         const autoRotate = () => {
             autoRotateInterval = setInterval(() => {
-                rotateCarousel(-1); // Tourne automatiquement vers la droite
-            }, 3000); // Pause de 3 secondes
+                rotateCarousel(-1); 
+            }, 3000); 
         };
 
-        // Arrêter et redémarrer l'auto-rotation après une interaction manuelle
         const resetAutoRotate = () => {
             clearInterval(autoRotateInterval);
-            autoRotate(); // Redémarre l'auto-rotation
+            autoRotate();
         };
 
-        // Événements des boutons
-        nextButton.addEventListener('click', () => rotateCarousel(-1)); // Tourne vers la droite
-        prevButton.addEventListener('click', () => rotateCarousel(1)); // Tourne vers la gauche
+        nextButton.addEventListener('click', () => rotateCarousel(-1));
+        prevButton.addEventListener('click', () => rotateCarousel(1));
 
-        // Démarrer l'auto-rotation au chargement
         autoRotate();
     </script>
 </body>

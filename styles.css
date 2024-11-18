@@ -44,6 +44,7 @@ body {
     flex: 1;
 }
 
+
 header {
     text-align: center;
     margin-bottom: 2rem;
@@ -73,6 +74,25 @@ header {
     margin-bottom: 40px;
 }
 
+.certifications-content{
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 40%;
+    padding: 20px;
+    text-align: left;
+    z-index: 1;
+    padding-top: 200px;
+}
+
+.certifications-content h2 {
+    text-align: center;
+}
+
+.certifications-content h3{
+    text-align: center;
+}
+
 .image-section {
     position: absolute;
     top: 10%;
@@ -93,6 +113,10 @@ header {
     z-index: 1;
     border-radius: 10px;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    flex: 1;
 }
 
 .image-box {
@@ -127,7 +151,7 @@ header {
     transition: transform 0.4s, box-shadow 0.4s;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     margin: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     width: 100%;
 }
 
@@ -146,6 +170,11 @@ header {
 
 .menu-box h3{
     color: #20b2b2;
+}
+
+#dynamicText {
+    font-size: 3rem;
+    font-weight: bold;
 }
 
 footer {
@@ -307,6 +336,36 @@ button:hover {
     animation-duration: 9s;
 }
 
+.section-left {
+    width: 45%; /* Prend 45% de la largeur */
+    padding: 20px;
+    top: 300px;
+    flex-wrap: wrap;
+}
+
+.section-left h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.section-left p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.section-right {
+    width: 45%; /* Prend 45% de la largeur */
+    padding: 20px;
+    top: auto;
+    padding-top: 200px;
+    flex-wrap: wrap;
+}
+
+.section-right h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
 .carousel-container {
     position: relative;
     width: 400px;
@@ -325,6 +384,8 @@ button:hover {
     align-items: center;
     transform-style: preserve-3d;
     transition: transform 1s ease-in-out;
+    margin: 5px;
+    margin-bottom: 10px;
 }
 
 .carousel-item {
@@ -376,13 +437,8 @@ button:hover {
     transition: transform 0.2s ease-in-out;
 }
 
-.prev-btn {
-    left: 0;
-}
-
-.next-btn {
-    right: 0;
-}
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
 
 .carousel-btn:hover {
     background-color: #444;
@@ -546,3 +602,44 @@ button:hover {
     }
 }
 
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
+
+    .projets-content, .image-section, .image-section1 {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    footer h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 90%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    footer h2 {
+        font-size: 1.2rem;
+    }
+
+    .projets-content h2 {
+        font-size: 2rem;
+    }
+
+    .menu-box h3 {
+        font-size: 1.2rem;
+    }
+}
