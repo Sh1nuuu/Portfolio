@@ -105,13 +105,13 @@ header {
 
 .image-section1 {
     position: absolute;
-    top: 170px;
+    top: 270px;
     right: 100px;
     width: 40%;
     padding: 20px;
     text-align: center;
     z-index: 1;
-    border-radius: 10px;
+    border-radius: 20px;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -122,7 +122,7 @@ header {
 .image-box {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 4px 10px rgba(22, 22, 22, 0.5);
 }
 
