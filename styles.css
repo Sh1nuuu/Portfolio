@@ -361,14 +361,6 @@ button:hover {
     flex-wrap: wrap;
 }
 
-.section-right1 {
-    width: 25%; /* Prend 25% de la largeur */
-    padding: 20px;
-    top: auto;
-    padding-top: 50px;
-    flex-wrap: wrap;
-}
-
 .section-right h2 {
     font-size: 2rem;
     margin-bottom: 15px;
