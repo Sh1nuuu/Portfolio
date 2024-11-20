@@ -386,6 +386,7 @@ button:hover {
     transition: transform 1s ease-in-out;
     margin: 5px;
     margin-bottom: 10px;
+    margine-top: 20px;
 }
 
 .carousel-item {
