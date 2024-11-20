@@ -357,7 +357,7 @@ button:hover {
     width: 45%; /* Prend 45% de la largeur */
     padding: 20px;
     top: auto;
-    padding-top: 200px;
+    padding-top: 300px;
     flex-wrap: wrap;
 }
 
